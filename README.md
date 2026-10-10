@@ -1,9 +1,9 @@
-# Codex — Math & Physics Textbook Solutions
+# Codex — Textbook Solutions
 
 [![Deploy to GitHub Pages](https://github.com/Ethanex8/codex/actions/workflows/deploy.yml/badge.svg)](https://github.com/Ethanex8/codex/actions/workflows/deploy.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-An open-source, curated collection of verified, step-by-step solutions to problems in standard undergraduate and graduate mathematics and physics textbooks.
+An open-source, curated collection of verified, step-by-step solutions to problems in standard undergraduate and graduate textbooks.
 
 🌐 **Live Website**: [https://Ethanex8.github.io/codex/](https://Ethanex8.github.io/codex/)
 
@@ -13,8 +13,6 @@ An open-source, curated collection of verified, step-by-step solutions to proble
 
 - **Physics**:
   - [John R. Taylor — *Classical Mechanics*](docs/physics/classical-mechanics/taylor/index.md)
-- **Mathematics**:
-  - Calculus, Linear Algebra, and Differential Equations roadmaps underway.
 
 ---
 

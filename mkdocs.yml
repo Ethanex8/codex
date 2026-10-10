@@ -1,5 +1,5 @@
-site_name: Codex - Math & Physics Solutions
-site_description: Verified step-by-step solutions to standard math and physics textbook problems.
+site_name: Codex - Textbook Solutions
+site_description: Verified step-by-step solutions to textbook problems.
 site_url: https://Ethanex8.github.io/codex/
 repo_url: https://github.com/Ethanex8/codex
 repo_name: Ethanex8/codex
@@ -53,7 +53,5 @@ nav:
       - Overview: physics/index.md
       - Classical Mechanics:
           - "Taylor: Classical Mechanics": physics/classical-mechanics/taylor/index.md
-  - Mathematics:
-      - Overview: math/index.md
   - Templates & Contributing:
       - Solution Template: templates/solution-template.md
