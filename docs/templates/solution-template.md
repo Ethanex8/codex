@@ -46,11 +46,3 @@ $$
 ![Figure Description](figures/fig_XX_YY.svg)
 *Figure 1: Description of physical setup or trajectory. Source: [`figures/fig_XX_YY.py`](figures/fig_XX_YY.py).*
 ```
-
----
-
-## Physical Remarks & Limiting Cases
-
-- **Check Dimensions**: Verify that both sides have units of $[M L T^{-2}]$.
-- **Limiting Cases**: What happens as $m \to 0$ or $t \to \infty$?
-- **Key Takeaway**: Summary of physical intuition.
