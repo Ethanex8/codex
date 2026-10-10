@@ -35,7 +35,11 @@ source .venv/bin/activate
 
 ### 3. Install Dependencies
 ```bash
-pip install -r requirements.txt
+# For site preview only:
+pip install -e .
+
+# For authoring diagrams and computational solutions:
+pip install -e ".[diagrams]"
 ```
 
 ### 4. Run Development Server

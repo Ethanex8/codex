@@ -28,6 +28,7 @@ ch01-newton/
 
 ## Authoring a Diagram
 
+0. Ensure diagram dependencies are installed: `pip install -e ".[diagrams]"`
 1. Copy the starter template from [`docs/templates/diagram-template.py`](diagram-template.py).
 2. Save it as `figures/fig_XX_YY.py` (matching the chapter and problem number).
 3. Use `matplotlib.patches`, annotations, and arrows to compose the figure.

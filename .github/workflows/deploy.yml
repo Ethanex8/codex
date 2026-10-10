@@ -22,8 +22,8 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install documentation dependencies
+        run: pip install .
 
       - name: Build and deploy site to GitHub Pages
         run: mkdocs gh-deploy --force

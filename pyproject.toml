@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex"
+version = "0.1.0"
+description = "Verified step-by-step solutions to textbook problems."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CC-BY-4.0" }
+authors = [
+    { name = "Ethan", email = "erh50@users.noreply.github.com" },
+]
+
+# Base dependencies: required for building and previewing the documentation site
+dependencies = [
+    "mkdocs-material>=9.5.0",
+    "pymdown-extensions>=10.7",
+]
+
+[project.optional-dependencies]
+# Dependencies for authoring custom vector diagrams and numerical plots
+diagrams = [
+    "matplotlib>=3.8.0",
+    "numpy>=1.26.0",
+]
+# All development dependencies combined
+dev = [
+    "codex[diagrams]",
+]
+
+[project.urls]
+Homepage = "https://Ethanex8.github.io/codex/"
+Repository = "https://github.com/Ethanex8/codex"
+Issues = "https://github.com/Ethanex8/codex/issues"
+
+[tool.setuptools]
+# Codex is a documentation & solutions repository, no Python package distribution required
+packages = []
