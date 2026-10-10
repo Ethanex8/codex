@@ -1,0 +1,59 @@
+site_name: Codex - Math & Physics Solutions
+site_description: Verified step-by-step solutions to standard math and physics textbook problems.
+site_url: https://Ethanex8.github.io/codex/
+repo_url: https://github.com/Ethanex8/codex
+repo_name: Ethanex8/codex
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Physics:
+      - Overview: physics/index.md
+      - Classical Mechanics:
+          - "Taylor: Classical Mechanics": physics/classical-mechanics/taylor/index.md
+  - Mathematics:
+      - Overview: math/index.md
+  - Templates & Contributing:
+      - Solution Template: templates/solution-template.md

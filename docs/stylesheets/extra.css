@@ -1,0 +1,18 @@
+/* Extra styling for math expressions and callouts */
+.arithmatex {
+  font-family: inherit;
+}
+
+/* Ensure display math scrolls gracefully on small screens */
+.arithmatex-display,
+mjx-container[jax="CHTML"][display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* Problem info box styling */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: #3f51b5;
+}
