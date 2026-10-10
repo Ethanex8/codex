@@ -62,8 +62,25 @@ mkdocs build --strict
      \oint \mathbf{B} \cdot d\mathbf{l} = \mu_0 I_{\text{enc}}
      $$
      ```
-3. Add computational snippets or plots when exercises explicitly call for them.
-4. Add the new problem file to `mkdocs.yml` under `nav`.
+3. Add the new problem file to `mkdocs.yml` under `nav`.
+
+---
+
+## 🎨 Custom Diagrams Workflow
+
+All diagrams (free-body diagrams, coordinate frames, geometric setups, plots) are authored with **Python** and exported as **SVG vector graphics**:
+
+1. Use the starter template at [`docs/templates/diagram-template.py`](docs/templates/diagram-template.py).
+2. Save it in a `figures/` folder alongside the problem (e.g., `figures/fig_01_01.py`).
+3. Run `python figures/fig_01_01.py` to generate `figures/fig_01_01.svg`.
+4. Embed the SVG in the solution Markdown:
+   ```markdown
+   ![Diagram](figures/fig_01_01.svg)
+   *Figure: Description. Source: [`figures/fig_01_01.py`](figures/fig_01_01.py).*
+   ```
+5. Commit **both** the `.py` source and `.svg` asset so diagrams remain 100% version-controlled, diffable, and editable.
+
+See the [Custom Diagrams Guide](docs/templates/diagrams.md) for full styling details.
 
 ---
 

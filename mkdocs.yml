@@ -53,5 +53,6 @@ nav:
       - Overview: physics/index.md
       - Classical Mechanics:
           - "Taylor: Classical Mechanics": physics/classical-mechanics/taylor/index.md
-  - Templates & Contributing:
+  - Contributing:
       - Solution Template: templates/solution-template.md
+      - Diagrams Guide: templates/diagrams.md

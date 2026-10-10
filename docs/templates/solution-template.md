@@ -38,15 +38,13 @@ $$
 
 ---
 
-## Computational Verification (If Applicable)
+## Diagrams & Figures (If Applicable)
 
-*(Only include if the problem asks for numerical evaluation, trajectory simulation, or plotting).*
+*(When an exercise requires a custom diagram, free-body diagram, or plot, author it using a paired Python script in the `figures/` subfolder using `docs/templates/diagram-template.py`).*
 
-```python
-# Minimal, reproducible Python snippet
-import numpy as np
-
-# calculation...
+```markdown
+![Figure Description](figures/fig_XX_YY.svg)
+*Figure 1: Description of physical setup or trajectory. Source: [`figures/fig_XX_YY.py`](figures/fig_XX_YY.py).*
 ```
 
 ---
