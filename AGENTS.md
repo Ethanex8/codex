@@ -18,3 +18,11 @@
 ## 3. Math & Markdown Formatting Invariants
 - **Display Math Padding**: Every display math block (`$$...$$`) must have an empty line before and after it. Failing to pad display math causes `pymdownx.arithmatex` to treat it as inline text inside a `<p>` tag, which breaks MathJax browser rendering.
 
+## 4. Custom Diagrams & Figures Standard
+- **Directory Layout**: All problem diagrams reside in a `figures/` subfolder alongside the solution file (e.g., `ch01/figures/fig_01_03.svg`).
+- **Dual-Track Workflow**:
+  - **Track A (Geometric / Conceptual)**: Author clean, standalone Native SVGs (`fig_XX_YY.svg`) directly without Python scripts.
+  - **Track B (Computational / Analytical)**: Author paired Python scripts (`fig_XX_YY.py`) following `docs/templates/diagram-template.py` to generate `fig_XX_YY.svg`. Commit both.
+- **In-Chat Preview via Generative UI**: Because raw SVG markup is sanitized in chat markdown, render diagram previews in chat responses using an HTML artifact embedded via `<agent-embed src="...">` so the user can verify it inline on mobile or desktop.
+- **Project Permissions**: Project-specific tool permissions belong in `~/.gemini/config/projects/<project-id>.json`, never in global permission configs.
+

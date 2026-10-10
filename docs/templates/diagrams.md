@@ -1,54 +1,59 @@
 # Custom Diagrams Guide
 
-All diagrams in **Codex** (free-body diagrams, coordinate frames, geometric setups, and trajectory plots) follow a unified, code-driven standard: **Python scripts that export standalone SVG vector graphics**.
+All diagrams in **Codex** follow a purposeful **Dual-Track Architecture**: choosing the right tool for the nature of the visualization.
 
 ---
 
-## Why Code-Driven SVGs?
+## The Dual-Track Standard
 
-1. **Version Controlled & Diffable**: Diagrams are written as plain `.py` code. Anyone can inspect, tweak, or fix an angle, label, or force arrow using standard Git diffs.
-2. **Crisp Vector Quality**: SVGs are resolution-independent and render sharply at any zoom level on GitHub.com and the documentation site.
-3. **No External GUI Dependencies**: No messy proprietary vector files or complex GUI editors required.
+| Track | Diagram Type | Recommended Tool | File Artifacts |
+| :--- | :--- | :--- | :--- |
+| **Track A: Geometric & Conceptual** | Coordinate frames, vector decompositions, right-triangle proofs, free-body diagrams, pulleys, optical rays | **Native SVG** (clean, hand-crafted or template-driven XML with semantic styling) | `figures/fig_XX_YY.svg` directly |
+| **Track B: Computational & Analytical** | ODE trajectories, numerical simulations, Fourier series, phase portraits, potential energy wells, vector fields | **Python (Matplotlib / NumPy / SciPy)** | `figures/fig_XX_YY.py` generating `figures/fig_XX_YY.svg` |
+
+---
+
+## Why Dual-Track?
+
+1. **Zero Unnecessary Friction for Conceptual Layouts**: Matplotlib is an analytical plotting library, not an illustration tool. Trying to draw geometric proofs in Matplotlib fights projection quirks and introduces heavy Python dependencies (`matplotlib`, `scipy`) where none are needed.
+2. **Web & Theme Independence**: Native SVGs render crisp vector geometry, scale responsively via `viewBox`, and can adapt using CSS variables and `<marker>` definitions.
+3. **Preserves Code for Genuine Physics**: Computational and numerical problems retain strict Python script reproducibility (`figures/fig_XX_YY.py`) for diffable, repeatable ODE simulations and curves.
 
 ---
 
 ## Directory & File Convention
 
-For any problem requiring one or more custom diagrams, create a `figures/` subfolder alongside the problem:
+For any problem requiring one or more custom diagrams, place them in a `figures/` subfolder alongside the problem:
 
 ```text
 ch01-newton/
 ├── figures/
-│   ├── fig_01_01.py       # Source code that generates the diagram
-│   └── fig_01_01.svg      # Rendered vector asset (committed to git)
-└── prob-01-01.md          # References figures/fig_01_01.svg
+│   ├── fig_01_03.svg      # Track A: Pure vector SVG asset
+│   ├── fig_01_04.py       # Track B: Python script for ODE trajectory simulation
+│   └── fig_01_04.svg      # Track B: Exported vector plot
+└── prob_01_03.md          # References figures/fig_01_03.svg
 ```
 
 ---
 
-## Authoring a Diagram
+## Authoring Guidelines
 
-0. Ensure diagram dependencies are installed: `pip install -e ".[diagrams]"`
-1. Copy the starter template from [`docs/templates/diagram-template.py`](diagram-template.py).
-2. Save it as `figures/fig_XX_YY.py` (matching the chapter and problem number).
-3. Use `matplotlib.patches`, annotations, and arrows to compose the figure.
-4. Run the script:
-   ```bash
-   python figures/fig_XX_YY.py
-   ```
-   This generates `figures/fig_XX_YY.svg`.
-5. Embed the SVG in the solution Markdown:
-   ```markdown
-   ![Free Body Diagram](figures/fig_XX_YY.svg)
-   *Figure 1: Free-body diagram. Source: [`figures/fig_XX_YY.py`](figures/fig_XX_YY.py).*
-   ```
-6. Commit **both** the `.py` script and the `.svg` file to Git.
+### Track A: Native SVGs
+- Use standard `<svg>` markup with a clear `viewBox` (e.g. `0 0 700 500`).
+- Define arrow heads and markers in `<defs>`.
+- Use semantic colors and readable font sizes (minimum 12px).
+- Embed in the solution Markdown:
+  ```markdown
+  ![Figure Description](figures/fig_XX_YY.svg)
+  ```
 
----
-
-## Standard Styling Guidelines
-
-- **Fonts**: Use standard sans-serif text with Computer Modern math (`"mathtext.fontset": "cm"`).
-- **Paths**: Set `plt.rcParams["svg.fonttype"] = "path"` so mathematical symbols and Greek letters render identically on all machines without needing local LaTeX installations.
-- **Transparency**: Save figures with `transparent=True` so diagrams blend smoothly across both light and dark site themes.
-- **Bounding Box**: Use `bbox_inches="tight"` to eliminate unnecessary white margins.
+### Track B: Python-Driven SVGs
+- Copy the starter template from [`docs/templates/diagram-template.py`](diagram-template.py).
+- Save as `figures/fig_XX_YY.py`.
+- Run `python figures/fig_XX_YY.py` to generate `figures/fig_XX_YY.svg`.
+- Embed in the solution Markdown:
+  ```markdown
+  ![Plot Description](figures/fig_XX_YY.svg)
+  *Figure 1: Trajectory plot. Source: [`figures/fig_XX_YY.py`](figures/fig_XX_YY.py).*
+  ```
+- Commit **both** the `.py` script and the `.svg` file to Git.

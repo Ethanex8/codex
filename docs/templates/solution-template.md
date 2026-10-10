@@ -40,7 +40,9 @@ $$
 
 ## Diagrams & Figures (If Applicable)
 
-*(When an exercise requires a custom diagram, free-body diagram, or plot, author it using a paired Python script in the `figures/` subfolder using `docs/templates/diagram-template.py`).*
+*(When an exercise requires a custom diagram, place it in the `figures/` subfolder according to `docs/templates/diagrams.md`:*
+*- Track A (Geometric/Conceptual): author directly as `figures/fig_XX_YY.svg`*
+*- Track B (Computational/Analytical): author as `figures/fig_XX_YY.py` exporting `figures/fig_XX_YY.svg`)*
 
 ```markdown
 ![Figure Description](figures/fig_XX_YY.svg)
