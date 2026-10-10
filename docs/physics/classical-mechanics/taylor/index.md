@@ -8,7 +8,7 @@ Welcome to the solutions guide for **John R. Taylor's *Classical Mechanics*** (U
 
 | Chapter | Title | Status |
 | :---: | :--- | :---: |
-| **1** | Newton's Laws of Motion | Planned |
+| **1** | [Newton's Laws of Motion](ch01/prob_01_01.md) | In Progress |
 | **2** | Projectiles and Charged Particles | Planned |
 | **3** | Momentum and Angular Momentum | Planned |
 | **4** | Energy | Planned |

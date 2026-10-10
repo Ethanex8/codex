@@ -52,7 +52,10 @@ nav:
   - Physics:
       - Overview: physics/index.md
       - Classical Mechanics:
-          - "Taylor: Classical Mechanics": physics/classical-mechanics/taylor/index.md
+          - "Taylor: Classical Mechanics":
+              - Overview: physics/classical-mechanics/taylor/index.md
+              - Chapter 1 — Newton's Laws:
+                  - Problem 1.1: physics/classical-mechanics/taylor/ch01/prob_01_01.md
   - Contributing:
       - Solution Template: templates/solution-template.md
       - Diagrams Guide: templates/diagrams.md
