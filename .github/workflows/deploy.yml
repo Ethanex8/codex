@@ -25,5 +25,8 @@ jobs:
       - name: Install documentation dependencies
         run: pip install .
 
-      - name: Build and deploy site to GitHub Pages
+      - name: Validate build strictly
+        run: mkdocs build --strict
+
+      - name: Deploy site to GitHub Pages
         run: mkdocs gh-deploy --force
