@@ -3,7 +3,7 @@
 ## 1. Problem Lifecycle & Collaborative Protocol
 - **Next Problem Auto-Tracking**: Infer the next problem in sequence directly from context (e.g., Problem 1.2 follows 1.1). Only list files if jumping chapters or the sequence is ambiguous.
 - **Problem Extraction**: Use the project utility `python scripts/extract_problem.py --chapter X --problem Y` to fetch the problem statement and inspect the rendered snippet from the local PDF.
-- **Minimal Context Reading**: Do NOT re-read existing solution files, textbook overview pages, or navigation configs for routine formatting style. Reuse established structure and formatting directly without unneeded file inspection.
+- **Zero Sibling Reading**: Never read existing or neighboring solution files (`prob_XX_YY-1.md`) or past commit diffs to look up templates or formatting. Follow the standard template in `docs/templates/solution-template.md` and the path conventions below.
 - **User-Led Strategy First**: Present the clean problem prompt and given parameters. Then wait for the user to provide their physical intuition, coordinate choice, and strategy.
 - **Guiding Principle**: Do not lecture or solve ahead of the user. Only interject or nudge if the user's stated approach contains an error, misconception, or sign trap.
 - **Strictly Targeted Solutions**: Keep authored solutions strictly focused on what the exercise asks for. Do not include unrequested remarks, checks, or tangent verification sections.
@@ -11,14 +11,34 @@
 - **Approval Gate & Remote Sync**: Wait for explicit user confirmation before staging and committing. Once committed, push to `origin main` so GitHub Pages deploys the update, then automatically fetch and present the next problem in sequence.
 - **Personal Scope**: This is a personal repository. Never add "Contributing" guidelines, templates, or pull request prompts.
 
-## 2. Local Assets & Security
+## 2. Directory Hierarchy & Solution Naming Contract
+- **Modular Codex Hierarchy**: All solutions follow the book-agnostic layout:
+  `docs/<discipline>/<subfield>/<book_slug>/ch<CC>/prob_<CC>_<PP>.md`
+  where `<CC>` and `<PP>` are zero-padded two-digit chapter and problem numbers (e.g., `ch01/prob_01_04.md`).
+- **Deterministic Path Derivation**: Maintain the active book and chapter directory in session context. Never search or run directory listings to rediscover the active path.
+- **Navigation Invariant**: In `mkdocs.yml`, locate and append the problem under the active chapter:
+  `- Problem X.Y: <rel_path_to_prob_XX_YY.md>`
+  Do not view large sections of `mkdocs.yml`—only read or edit the immediate chapter nav block.
+- **Self-Contained Frontmatter Schema**:
+  ```markdown
+  # Problem X.Y
+
+  !!! info "Textbook Reference"
+      - **Textbook**: *[Book Title]* ([Author])
+      - **Chapter**: X — [Chapter Title]
+      - **Problem**: X.Y
+      - **Topic**: [Topic tags]
+  ```
+- **Diagram Prerequisite**: Purely algebraic or component evaluations do NOT have a diagram or figures section. Only create diagrams (`figures/fig_<CC>_<PP>.svg`) when the problem involves geometric configurations, trajectories, or visual setups. Never inspect previous problem files to check for figure precedent.
+
+## 3. Local Assets & Security
 - **Strictly Local**: Textbook PDFs and generated image snippets must reside strictly in `_local_data/` (or external paths) and be excluded by `.gitignore` (`_local_data/`, `*.pdf`). Never stage or commit textbook PDFs or raw copyright scans.
 - **Fair Use Problem Paraphrasing**: In the published Markdown solutions, summarize given quantities and target questions clearly in original wording.
 
-## 3. Math & Markdown Formatting Invariants
+## 4. Math & Markdown Formatting Invariants
 - **Display Math Padding**: Every display math block (`$$...$$`) must have an empty line before and after it. Failing to pad display math causes `pymdownx.arithmatex` to treat it as inline text inside a `<p>` tag, which breaks MathJax browser rendering.
 
-## 4. Custom Diagrams & Figures Standard
+## 5. Custom Diagrams & Figures Standard
 - **Directory Layout**: All problem diagrams reside in a `figures/` subfolder alongside the solution file (e.g., `ch01/figures/fig_01_03.svg`).
 - **Dual-Track Workflow**:
   - **Track A (Geometric / Conceptual)**: Author clean, standalone Native SVGs (`fig_XX_YY.svg`) directly without Python scripts.
