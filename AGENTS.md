@@ -1,8 +1,9 @@
 # Codex Authoring & Collaboration Guidelines
 
 ## 1. Problem Lifecycle & Collaborative Protocol
-- **Next Problem Auto-Tracking**: Inspect existing solution files in `docs/physics/.../` to determine the next problem in sequence.
+- **Next Problem Auto-Tracking**: Infer the next problem in sequence directly from context (e.g., Problem 1.2 follows 1.1). Only list files if jumping chapters or the sequence is ambiguous.
 - **Problem Extraction**: Use the project utility `python scripts/extract_problem.py --chapter X --problem Y` to fetch the problem statement and inspect the rendered snippet from the local PDF.
+- **Minimal Context Reading**: Do NOT re-read existing solution files, textbook overview pages, or navigation configs for routine formatting style. Reuse established structure and formatting directly without unneeded file inspection.
 - **User-Led Strategy First**: Present the clean problem prompt and given parameters. Then wait for the user to provide their physical intuition, coordinate choice, and strategy.
 - **Guiding Principle**: Do not lecture or solve ahead of the user. Only interject or nudge if the user's stated approach contains an error, misconception, or sign trap.
 - **Strictly Targeted Solutions**: Keep authored solutions strictly focused on what the exercise asks for. Do not include unrequested remarks, checks, or tangent verification sections.
