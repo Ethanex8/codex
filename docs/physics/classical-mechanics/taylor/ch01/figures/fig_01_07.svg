@@ -15,62 +15,62 @@
   <!-- Title -->
   <text x="360" y="38" text-anchor="middle" fill="#cdd6f4" font-size="19" font-weight="600">Equivalence of Scalar Product Definitions</text>
 
-  <!-- Coordinate Axes: Origin O(160, 380) -->
+  <!-- Coordinate Axes: Origin O(150, 370) -->
   <!-- X axis (aligned with r) -->
-  <line x1="100" y1="380" x2="620" y2="380" stroke="#9399b2" stroke-width="2" marker-end="url(#arrow-axis)" />
-  <text x="635" y="385" fill="#cdd6f4" font-size="18" font-style="italic" font-weight="bold">x</text>
+  <line x1="90" y1="370" x2="630" y2="370" stroke="#9399b2" stroke-width="2" marker-end="url(#arrow-axis)" />
+  <text x="645" y="375" fill="#cdd6f4" font-size="18" font-style="italic" font-weight="bold">x</text>
 
   <!-- Y axis (in the plane of r and s) -->
-  <line x1="160" y1="440" x2="160" y2="80" stroke="#9399b2" stroke-width="2" marker-end="url(#arrow-axis)" />
-  <text x="155" y="70" fill="#cdd6f4" font-size="18" font-style="italic" font-weight="bold" text-anchor="end">y</text>
+  <line x1="150" y1="430" x2="150" y2="70" stroke="#9399b2" stroke-width="2" marker-end="url(#arrow-axis)" />
+  <text x="145" y="60" fill="#cdd6f4" font-size="18" font-style="italic" font-weight="bold" text-anchor="end">y</text>
 
   <!-- Origin label -->
-  <circle cx="160" cy="380" r="4.5" fill="#cdd6f4" />
-  <text x="145" y="400" fill="#cdd6f4" font-size="14" text-anchor="end">O</text>
+  <circle cx="150" cy="370" r="4.5" fill="#cdd6f4" />
+  <text x="135" y="390" fill="#cdd6f4" font-size="14" text-anchor="end">O</text>
 
   <!-- Geometry:
-       Origin = (160, 380)
-       Vector r: length = 320 along x-axis => (480, 380)
-       Vector s: length = 260 at angle θ = 40 deg
-         dx = 260 * cos(40°) = 260 * 0.766 = 199 => x = 160 + 199 = 359
-         dy = 260 * sin(40°) = 260 * 0.643 = 167 => y = 380 - 167 = 213
+       Origin = (150, 370)
+       Vector r: length = 280 along x-axis => (430, 370)
+       Vector s: length = 250 at angle θ = 40 deg
+         dx = 250 * cos(40°) = 250 * 0.766 = 191 => x = 150 + 191 = 341
+         dy = 250 * sin(40°) = 250 * 0.643 = 161 => y = 370 - 161 = 209
   -->
 
   <!-- Component Projection Lines for s -->
-  <!-- Vertical dashed line from s head (359, 213) to x-axis (359, 380) -->
-  <line x1="359" y1="213" x2="359" y2="380" stroke="#6c7086" stroke-width="1.8" stroke-dasharray="4,4" />
-  <!-- Horizontal dashed line from s head (359, 213) to y-axis (160, 213) -->
-  <line x1="160" y1="213" x2="359" y2="213" stroke="#6c7086" stroke-width="1.8" stroke-dasharray="4,4" />
+  <!-- Vertical dashed line from s head (341, 209) to x-axis (341, 370) -->
+  <line x1="341" y1="209" x2="341" y2="370" stroke="#6c7086" stroke-width="1.8" stroke-dasharray="4,4" />
+  <!-- Horizontal dashed line from s head (341, 209) to y-axis (150, 209) -->
+  <line x1="150" y1="209" x2="341" y2="209" stroke="#6c7086" stroke-width="1.8" stroke-dasharray="4,4" />
 
-  <!-- Right angle marker at (359, 380) -->
-  <path d="M 344 380 L 344 365 L 359 365" fill="none" stroke="#6c7086" stroke-width="1.5" />
+  <!-- Right angle marker at (341, 370) -->
+  <path d="M 326 370 L 326 355 L 341 355" fill="none" stroke="#6c7086" stroke-width="1.5" />
 
-  <!-- Shaded projection interval along x-axis: [160, 359] -->
-  <rect x="160" y="380" width="199" height="18" fill="#a6e3a1" fill-opacity="0.18" />
-  <text x="259" y="415" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="middle">s<tspan dy="3" font-size="11">x</tspan><tspan dy="-3"> = s cos θ</tspan></text>
+  <!-- Shaded projection interval along x-axis: [150, 341] -->
+  <rect x="150" y="375" width="191" height="16" fill="#a6e3a1" fill-opacity="0.2" />
+  <text x="245" y="415" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="middle">s<tspan dy="3" font-size="11">x</tspan><tspan dy="-3"> = s cos θ</tspan></text>
 
   <!-- Projection label along y-axis -->
-  <text x="145" y="295" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="end">s<tspan dy="3" font-size="11">y</tspan><tspan dy="-3"> = s sin θ</tspan></text>
+  <text x="135" y="290" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="end">s<tspan dy="3" font-size="11">y</tspan><tspan dy="-3"> = s sin θ</tspan></text>
 
-  <!-- Vector r along x-axis: from (160, 380) to (480, 380) -->
-  <line x1="160" y1="380" x2="473" y2="380" stroke="#89b4fa" stroke-width="4" marker-end="url(#arrow-r)" />
-  <text x="495" y="370" fill="#89b4fa" font-size="17" font-weight="bold">r = (r, 0, 0)</text>
+  <!-- Vector r along x-axis: drawn slightly above the axis line for clear visibility -->
+  <line x1="150" y1="362" x2="432" y2="362" stroke="#89b4fa" stroke-width="4" marker-end="url(#arrow-r)" />
+  <text x="450" y="355" fill="#89b4fa" font-size="16" font-weight="bold">r = (r, 0, 0)</text>
 
-  <!-- Vector s at angle θ: from (160, 380) to (359, 213) -->
-  <line x1="160" y1="380" x2="354" y2="218" stroke="#fab387" stroke-width="3.5" marker-end="url(#arrow-s)" />
-  <text x="370" y="210" fill="#fab387" font-size="17" font-weight="bold">s = (s cos θ, s sin θ, 0)</text>
+  <!-- Vector s at angle θ: from (150, 370) to (341, 209) -->
+  <line x1="150" y1="370" x2="336" y2="214" stroke="#fab387" stroke-width="3.5" marker-end="url(#arrow-s)" />
+  <text x="350" y="200" fill="#fab387" font-size="16" font-weight="bold">s = (s cos θ, s sin θ, 0)</text>
 
   <!-- Angle arc θ between r and s at Origin (radius = 65) -->
-  <path d="M 225 380 A 65 65 0 0 0 210 338" fill="none" stroke="#f38ba8" stroke-width="2.2" />
-  <text x="230" y="355" fill="#f38ba8" font-size="17" font-weight="bold">θ</text>
+  <path d="M 215 370 A 65 65 0 0 0 200 328" fill="none" stroke="#f38ba8" stroke-width="2.2" />
+  <text x="220" y="348" fill="#f38ba8" font-size="17" font-weight="bold">θ</text>
 
   <!-- Derivation Summary Card -->
-  <rect x="430" y="75" width="270" height="195" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
-  <text x="445" y="103" fill="#fab387" font-size="15" font-weight="bold">Evaluation of Components</text>
-  <text x="445" y="132" fill="#89b4fa" font-size="13">r = (r, 0, 0)</text>
-  <text x="445" y="157" fill="#fab387" font-size="13">s = (s cos θ, s sin θ, 0)</text>
-  <line x1="445" y1="172" x2="685" y2="172" stroke="#45475a" stroke-width="1" />
-  <text x="445" y="197" fill="#cdd6f4" font-size="13">∑ r<tspan dy="2" font-size="10">i</tspan><tspan dy="-2"> s</tspan><tspan dy="2" font-size="10">i</tspan><tspan dy="-2"> = r</tspan><tspan dy="2" font-size="10">x</tspan><tspan dy="-2"> s</tspan><tspan dy="2" font-size="10">x</tspan><tspan dy="-2"> + r</tspan><tspan dy="2" font-size="10">y</tspan><tspan dy="-2"> s</tspan><tspan dy="2" font-size="10">y</tspan><tspan dy="-2"> + r</tspan><tspan dy="2" font-size="10">z</tspan><tspan dy="-2"> s</tspan><tspan dy="2" font-size="10">z</tspan></text>
-  <text x="445" y="222" fill="#cdd6f4" font-size="13">    = (r)(s cos θ) + 0 + 0</text>
-  <text x="445" y="250" fill="#a6e3a1" font-size="14" font-weight="bold">    = r s cos θ  ✓</text>
+  <rect x="420" y="70" width="280" height="200" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  <text x="435" y="98" fill="#fab387" font-size="15" font-weight="bold">Evaluation of Components</text>
+  <text x="435" y="128" fill="#89b4fa" font-size="13">r = (r, 0, 0)</text>
+  <text x="435" y="153" fill="#fab387" font-size="13">s = (s cos θ, s sin θ, 0)</text>
+  <line x1="435" y1="168" x2="685" y2="168" stroke="#45475a" stroke-width="1" />
+  <text x="435" y="193" fill="#cdd6f4" font-size="13">∑ r<tspan dy="2" font-size="10">i</tspan><tspan dy="-2"> s</tspan><tspan dy="2" font-size="10">i</tspan><tspan dy="-2"> = r</tspan><tspan dy="2" font-size="10">x</tspan><tspan dy="-2"> s</tspan><tspan dy="2" font-size="10">x</tspan><tspan dy="-2"> + r</tspan><tspan dy="2" font-size="10">y</tspan><tspan dy="-2"> s</tspan><tspan dy="2" font-size="10">y</tspan><tspan dy="-2"> + r</tspan><tspan dy="2" font-size="10">z</tspan><tspan dy="-2"> s</tspan><tspan dy="2" font-size="10">z</tspan></text>
+  <text x="435" y="218" fill="#cdd6f4" font-size="13">    = (r)(s cos θ) + 0 + 0</text>
+  <text x="435" y="246" fill="#a6e3a1" font-size="14" font-weight="bold">    = r s cos θ  ✓</text>
 </svg>
