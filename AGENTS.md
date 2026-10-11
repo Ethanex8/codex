@@ -7,6 +7,7 @@
 - **User-Led Strategy First**: Present the clean problem prompt and given parameters. Then wait for the user to provide their physical intuition, coordinate choice, and strategy.
 - **Guiding Principle**: Do not lecture or solve ahead of the user. Only interject or nudge if the user's stated approach contains an error, misconception, or sign trap.
 - **Strictly Targeted Solutions**: Keep authored solutions strictly focused on what the exercise asks for. Do not include unrequested remarks, checks, or tangent verification sections.
+- **Pedagogical Scope Alignment**: Align authored explanations and diagram notes strictly with concepts and techniques introduced up to the active section of the textbook. Never invoke future concepts (e.g., forces, potential energy, harmonic oscillators) before they are formally introduced in the text.
 - **Mobile-Friendly Review**: Always format and print the full mathematical solution directly into the chat response so the user can review and verify on mobile without relying on a localhost browser server.
 - **Approval Gate & Remote Sync**: Wait for explicit user confirmation before staging and committing. Once committed, push to `origin main` so GitHub Pages deploys the update, then automatically fetch and present the next problem in sequence.
 - **Build Verification**: When modifying documentation structure or `mkdocs.yml`, verify site integrity locally using `python -m mkdocs build --strict`.
@@ -53,6 +54,8 @@
   - **Track B (Computational / Analytical)**: Author paired Python scripts (`fig_XX_YY.py`) following `docs/templates/diagram-template.py` to generate `fig_XX_YY.svg`. Commit both.
 - **Layout & Collision Invariants**:
   - **Side-by-Side Cards**: When using an info/derivation card on the right ($x \ge 475$), offset coordinate origins leftward ($x \le 180$) and bound horizontal axes/labels to $x \le 440$ to ensure a minimum 35px visual buffer.
+  - **Card Vertical Budget**: Size card heights, line spacing, and font sizes so the bottom-most element or highlight box maintains at least a 20px buffer from the card bottom edge, keeping the overall card bottom bound $\le 505\text{px}$ within the 520px canvas.
+  - **Vector & Annotation Clearance**: In 2D and 3D projections, select particle evaluation points $P(t)$ that maximize screen angular separation between $\mathbf{v}$, $\mathbf{a}$, and $\mathbf{r}$ ($\ge 45^\circ$). Place dimensional indicators (e.g., pitch, semi-axes, radii) in clear background zones away from vector rays and coordinate axes.
   - **Stacked Layout for Complex Setups**: When vector configurations require wide horizontal spans or lengthy component derivations, use a vertical split: vector geometry in the upper zone ($y \in [40, 290]$) and a full-width derivation card across the bottom ($y \in [320, 500]$).
 - **In-Chat Preview**: Render diagram previews in chat responses using an HTML artifact in the conversation artifact directory wrapping the SVG markup inside an `<agent-embed src="file:///<path>/fig_XX_YY_preview.html"></agent-embed>` block. Never re-read external skill docs or templates to construct this.
 
