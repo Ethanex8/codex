@@ -3,7 +3,7 @@
 ## 1. Problem Lifecycle & Collaborative Protocol
 - **Next Problem Auto-Tracking**: Infer the next problem in sequence directly from context (e.g., Problem 1.2 follows 1.1). Only list files if jumping chapters or the sequence is ambiguous.
 - **Problem Extraction**: Use the project utility `python scripts/extract_problem.py --chapter X --problem Y` to fetch the problem statement and inspect the rendered snippet from the local PDF.
-- **Zero Sibling Reading**: Never read existing or neighboring solution files (`prob_XX_YY-1.md`) or past commit diffs to look up templates or formatting. Follow the standard template in `docs/templates/solution-template.md` and the path conventions below.
+- **Zero Sibling Reading**: Never read existing or neighboring solution files (`prob_XX_YY-1.md`), diagrams (`fig_XX_YY.svg`), or past commit diffs to look up templates, styling, or formatting. All templates, design tokens, and path conventions are self-contained below.
 - **User-Led Strategy First**: Present the clean problem prompt and given parameters. Then wait for the user to provide their physical intuition, coordinate choice, and strategy.
 - **Guiding Principle**: Do not lecture or solve ahead of the user. Only interject or nudge if the user's stated approach contains an error, misconception, or sign trap.
 - **Strictly Targeted Solutions**: Keep authored solutions strictly focused on what the exercise asks for. Do not include unrequested remarks, checks, or tangent verification sections.
@@ -40,9 +40,13 @@
 
 ## 5. Custom Diagrams & Figures Standard
 - **Directory Layout**: All problem diagrams reside in a `figures/` subfolder alongside the solution file (e.g., `ch01/figures/fig_01_03.svg`).
+- **Visual Style Tokens**:
+  - **Theme**: Catppuccin Mocha. Background: `#1e1e2e`, Main Text: `#cdd6f4`, Muted / Axes: `#9399b2`, Box Edges: `#6c7086`.
+  - **Accent Colors**: Blue (`#89b4fa`), Red (`#f38ba8`), Orange (`#fab387`), Green (`#a6e3a1`).
+  - **Canvas & Font**: `viewBox="0 0 720 520"`, sans-serif font family, minimum 12px font size.
 - **Dual-Track Workflow**:
   - **Track A (Geometric / Conceptual)**: Author clean, standalone Native SVGs (`fig_XX_YY.svg`) directly without Python scripts.
   - **Track B (Computational / Analytical)**: Author paired Python scripts (`fig_XX_YY.py`) following `docs/templates/diagram-template.py` to generate `fig_XX_YY.svg`. Commit both.
-- **In-Chat Preview via Generative UI**: Because raw SVG markup is sanitized in chat markdown, render diagram previews in chat responses using an HTML artifact embedded via `<agent-embed src="...">` so the user can verify it inline on mobile or desktop.
+- **In-Chat Preview via Generative UI**: Render diagram previews in chat responses using an HTML artifact in the conversation artifact directory wrapping the SVG markup inside an `<agent-embed src="file:///<path>/fig_XX_YY_preview.html"></agent-embed>` block. Never re-read skill docs or external templates to construct this.
 - **Project Permissions**: Project-specific tool permissions belong in `~/.gemini/config/projects/<project-id>.json`, never in global permission configs.
 
