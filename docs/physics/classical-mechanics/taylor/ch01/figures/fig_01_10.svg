@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825" />
+      <stop offset="100%" stop-color="#1e1e2e" />
+    </linearGradient>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#89b4fa" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f38ba8" />
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#9399b2" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fab387" />
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 700; font-size: 18px; fill: #cdd6f4; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #a6adc8; }
+    .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 600; font-size: 14px; fill: #89b4fa; }
+    .math-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; fill: #cdd6f4; }
+    .math-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: bold; }
+    .sub-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #bac2de; }
+    .angle-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-style: italic; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="720" height="520" rx="16" fill="url(#bgGrad)" />
+  <rect width="718" height="518" x="1" y="1" rx="15" fill="none" stroke="#313244" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(35, 40)">
+    <text class="title" x="0" y="0">Uniform Circular Motion Kinematics</text>
+    <text class="subtitle" x="0" y="20">Position r(t), velocity v(t), and centripetal acceleration a(t)</text>
+  </g>
+
+  <!-- Left Visual Geometry Area: Center at (220, 305), R = 145 -->
+  <g id="geometry">
+    <!-- Axes -->
+    <line x1="45" y1="305" x2="395" y2="305" stroke="#9399b2" stroke-width="1.2" marker-end="url(#arrow-muted)" />
+    <line x1="220" y1="480" x2="220" y2="105" stroke="#9399b2" stroke-width="1.2" marker-end="url(#arrow-muted)" />
+    <text class="sub-label" x="402" y="309">x</text>
+    <text class="sub-label" x="216" y="95">y</text>
+    <text class="sub-label" x="204" y="322">O</text>
+
+    <!-- Circular Path (Radius R = 145) -->
+    <circle cx="220" cy="305" r="145" fill="none" stroke="#45475a" stroke-width="1.5" stroke-dasharray="5,5" />
+
+    <!-- Counterclockwise rotation indicator arrow on path -->
+    <path d="M 220 160 A 145 145 0 0 0 165 171" fill="none" stroke="#fab387" stroke-width="2" marker-end="url(#arrow-orange)" />
+    <text class="angle-label" x="190" y="148" fill="#fab387">&omega;</text>
+
+    <!-- Initial position at t = 0 -->
+    <circle cx="365" cy="305" r="3.5" fill="#6c7086" />
+    <text class="sub-label" x="355" y="325" fill="#9399b2">t = 0</text>
+
+    <!-- Angle theta = omega * t arc (theta = 50 deg, r = 42) -->
+    <path d="M 262 305 A 42 42 0 0 0 247 272.8" fill="#fab387" fill-opacity="0.2" stroke="#fab387" stroke-width="1.6" />
+    <text class="angle-label" x="268" y="290" fill="#fab387">&theta; = &omega;t</text>
+
+    <!-- Position vector r(t): from (220, 305) to P(313.2, 193.9) -->
+    <line x1="220" y1="305" x2="308" y2="200" stroke="#89b4fa" stroke-width="3" marker-end="url(#arrow-blue)" />
+    <text class="math-label" x="250" y="238" fill="#89b4fa">r(t)</text>
+
+    <!-- Projection lines for components of r -->
+    <line x1="313.2" y1="193.9" x2="313.2" y2="305" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
+    <line x1="313.2" y1="193.9" x2="220" y2="193.9" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
+    <text class="sub-label" x="282" y="322" fill="#89b4fa">R cos(&omega;t)</text>
+    <text class="sub-label" x="135" y="198" fill="#89b4fa">R sin(&omega;t)</text>
+
+    <!-- Velocity vector v(t): Tangential, angle 140 deg -->
+    <!-- From P(313.2, 193.9), dx = -70, dy = -58.7 -> end (243.2, 135.2) -->
+    <line x1="313.2" y1="193.9" x2="249" y2="140" stroke="#a6e3a1" stroke-width="3" marker-end="url(#arrow-green)" />
+    <text class="math-label" x="278" y="150" fill="#a6e3a1">v(t)</text>
+
+    <!-- Acceleration vector a(t): Centripetal, pointing back to O -->
+    <!-- From P(313.2, 193.9) toward (220, 305), length ~ 85 -->
+    <line x1="313.2" y1="193.9" x2="262" y2="255" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)" />
+    <text class="math-label" x="298" y="252" fill="#f38ba8">a(t)</text>
+
+    <!-- Particle dot at P -->
+    <circle cx="313.2" cy="193.9" r="5.5" fill="#cdd6f4" stroke="#11111b" stroke-width="1.5" />
+    <text class="sub-label" x="324" y="190" fill="#cdd6f4" font-weight="bold">P(t)</text>
+  </g>
+
+  <!-- Right Side Card Panel (x = 435 to 695, w = 260) -->
+  <g transform="translate(435, 80)">
+    <rect width="260" height="415" rx="12" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5" />
+    
+    <!-- Card Header -->
+    <rect width="260" height="38" rx="12" fill="#252538" />
+    <rect width="260" height="15" y="23" fill="#252538" />
+    <line x1="0" y1="38" x2="260" y2="38" stroke="#45475a" stroke-width="1" />
+    <text class="card-title" x="16" y="24">Kinematic Relations</text>
+
+    <!-- Card Content -->
+    <g transform="translate(16, 56)">
+      <!-- Position -->
+      <text class="sub-label" x="0" y="0">1. Position Vector</text>
+      <text class="math-text" x="8" y="20" fill="#89b4fa">r(t) = R cos(&omega;t) x&#770; + R sin(&omega;t) y&#770;</text>
+      <text class="sub-label" x="8" y="38" fill="#9399b2">|r| = R (constant radius)</text>
+
+      <!-- Velocity -->
+      <text class="sub-label" x="0" y="68">2. Velocity Vector</text>
+      <text class="math-text" x="8" y="88" fill="#a6e3a1">v(t) = dr/dt</text>
+      <text class="math-text" x="8" y="108" fill="#a6e3a1">v(t) = &minus;&omega;R sin(&omega;t) x&#770; + &omega;R cos(&omega;t) y&#770;</text>
+      <text class="sub-label" x="8" y="126" fill="#9399b2">Speed: v = |v| = &omega;R</text>
+      <text class="sub-label" x="8" y="142" fill="#9399b2">v &middot; r = 0 (tangential to circle)</text>
+
+      <!-- Acceleration -->
+      <text class="sub-label" x="0" y="172">3. Acceleration Vector</text>
+      <text class="math-text" x="8" y="192" fill="#f38ba8">a(t) = dv/dt = d&sup2;r/dt&sup2;</text>
+      <text class="math-text" x="8" y="212" fill="#f38ba8">a(t) = &minus;&omega;&sup2;R cos(&omega;t) x&#770; &minus; &omega;&sup2;R sin(&omega;t) y&#770;</text>
+      <text class="math-text" x="8" y="232" fill="#f38ba8">a(t) = &minus;&omega;&sup2; r(t)</text>
+
+      <!-- Divider -->
+      <line x1="0" y1="248" x2="228" y2="248" stroke="#313244" stroke-width="1.2" />
+
+      <!-- Physical Properties -->
+      <text class="sub-label" x="0" y="268" fill="#fab387">4. Motion Characteristics</text>
+      <text class="sub-label" x="8" y="288">&bull; Magnitude: a = &omega;&sup2;R = v&sup2; / R</text>
+      <text class="sub-label" x="8" y="306">&bull; Direction: Centripetal (&minus;r&#770;)</text>
+      <text class="sub-label" x="8" y="324">&bull; Directed toward center O</text>
+
+      <!-- Highlight Box -->
+      <rect x="0" y="336" width="228" height="26" rx="4" fill="#313244" stroke="#fab387" stroke-width="0.8" />
+      <text class="math-text" x="12" y="353" fill="#fab387" font-size="13px">a = &minus;(v&sup2;/R) r&#770; (centripetal)</text>
+    </g>
+  </g>
+</svg>
