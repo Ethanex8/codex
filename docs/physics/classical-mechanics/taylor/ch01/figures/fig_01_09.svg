@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181825" />
+      <stop offset="100%" stop-color="#1e1e2e" />
+    </linearGradient>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#89b4fa" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fab387" />
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#6c7086" />
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 700; font-size: 18px; fill: #cdd6f4; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #a6adc8; }
+    .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 600; font-size: 14px; fill: #89b4fa; }
+    .math-text { font-family: "Cambria Math", "Times New Roman", serif; font-size: 16px; fill: #cdd6f4; }
+    .math-label { font-family: "Cambria Math", "Times New Roman", serif; font-size: 18px; font-weight: bold; }
+    .sub-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #bac2de; }
+    .angle-label { font-family: "Cambria Math", "Times New Roman", serif; font-size: 15px; font-style: italic; }
+  </style>
+
+  <!-- Deep Mocha Canvas Background -->
+  <rect width="720" height="520" rx="16" fill="url(#bgGrad)" />
+  <rect width="718" height="518" x="1" y="1" rx="15" fill="none" stroke="#313244" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(35, 40)">
+    <text class="title" x="0" y="0">Vector Geometry &amp; The Law of Cosines</text>
+    <text class="subtitle" x="0" y="20">Head-to-tail triangle addition: c = a + b with interior angle &#x3B8;</text>
+  </g>
+
+  <!-- Left: Geometry Visual Area (Origin at (80, 390)) -->
+  <!-- A = (80, 390), B = (310, 390), C = (210, 150) -->
+  <g transform="translate(0, 0)">
+    <!-- Shaded Triangle Area -->
+    <polygon points="80,390 310,390 210,150" fill="#313244" fill-opacity="0.35" stroke="#45475a" stroke-dasharray="4,4" stroke-width="1.2" />
+
+    <!-- Dashed Extension of vector a past vertex B -->
+    <line x1="310" y1="390" x2="420" y2="390" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="5,4" />
+
+    <!-- Angle theta (interior at B): from line BC (angle 247.38 deg = -112.62 deg) to negative BA (180 deg) -->
+    <!-- Center (310, 390), radius r=45. Arc from 180 deg (265, 390) to 247.38 deg (310 - 45*cos(67.38), 390 - 45*sin(67.38)) = (292.7, 348.5) -->
+    <path d="M 265 390 A 45 45 0 0 1 292.7 348.5" fill="#f38ba8" fill-opacity="0.18" stroke="#f38ba8" stroke-width="1.8" />
+    <text class="angle-label" x="272" y="374" fill="#f38ba8">&#x3B8;</text>
+
+    <!-- Angle (180 - theta) (exterior between +a extension and b): -->
+    <!-- Arc from dir b (247.38 deg: from B toward C) to 0 deg (360 deg) -> Actually angle of b is from B to C = (-100, -240), angle is atan2(-240, -100) = -112.6 deg. -->
+    <!-- To measure angle between vector a (dir +x) and b (dir -100, -240), when tails are placed together, the angle is 180 - theta = 112.62 deg. -->
+    <!-- Arc at vertex B from 0 deg (360, 390) to (310 - 50*cos(67.38), 390 - 50*sin(67.38)) = (290.8, 343.8) -->
+    <path d="M 360 390 A 50 50 0 0 0 290.8 343.8" fill="#fab387" fill-opacity="0.15" stroke="#fab387" stroke-width="1.8" />
+    <text class="angle-label" x="328" y="360" fill="#fab387">180&#x00B0; &#x2212; &#x3B8;</text>
+
+    <!-- Vector a: from (80, 390) to (310, 390) -->
+    <line x1="80" y1="390" x2="304" y2="390" stroke="#89b4fa" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+    <!-- Vector b: from (310, 390) to (210, 150) -->
+    <line x1="310" y1="390" x2="213" y2="157" stroke="#a6e3a1" stroke-width="3.5" marker-end="url(#arrow-green)" />
+    <!-- Vector c = a + b: from (80, 390) to (210, 150) -->
+    <line x1="80" y1="390" x2="206" y2="157" stroke="#fab387" stroke-width="3.5" marker-end="url(#arrow-orange)" />
+
+    <!-- Vector Labels -->
+    <text class="math-label" x="190" y="418" fill="#89b4fa">a</text>
+    <text class="math-label" x="272" y="260" fill="#a6e3a1">b</text>
+    <text class="math-label" x="125" y="260" fill="#fab387">c = a + b</text>
+
+    <!-- Vertex Points and Labels -->
+    <circle cx="80" cy="390" r="4.5" fill="#cdd6f4" />
+    <circle cx="310" cy="390" r="4.5" fill="#cdd6f4" />
+    <circle cx="210" cy="150" r="4.5" fill="#cdd6f4" />
+  </g>
+
+  <!-- Right: Card Panel (x = 450 to 690, w = 240) -->
+  <g transform="translate(450, 95)">
+    <!-- Card Background -->
+    <rect width="240" height="385" rx="12" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5" />
+
+    <!-- Card Header -->
+    <rect width="240" height="40" rx="12" fill="#252538" />
+    <rect width="240" height="15" y="25" fill="#252538" />
+    <line x1="0" y1="40" x2="240" y2="40" stroke="#45475a" stroke-width="1" />
+    <text class="card-title" x="16" y="25">Derivation Summary</text>
+
+    <!-- Card Content -->
+    <g transform="translate(16, 62)">
+      <!-- Step 1 -->
+      <text class="sub-label" x="0" y="0">1. Vector Setup</text>
+      <text class="math-text" x="8" y="22">&#x1D450; = &#x1D44E; + &#x1D44F;</text>
+      <text class="sub-label" x="8" y="42" fill="#9399b2">Head of &#x1D44E; at tail of &#x1D44F;</text>
+
+      <!-- Step 2 -->
+      <text class="sub-label" x="0" y="74">2. Vector Identity</text>
+      <text class="math-text" x="8" y="96">&#x1D450;&#x00B2; = (&#x1D44E; + &#x1D44F;) &#x22C5; (&#x1D44E; + &#x1D44F;)</text>
+      <text class="math-text" x="8" y="120">&#x1D450;&#x00B2; = &#x1D44E;&#x00B2; + &#x1D44F;&#x00B2; + 2(&#x1D44E; &#x22C5; &#x1D44F;)</text>
+
+      <!-- Step 3 -->
+      <text class="sub-label" x="0" y="152">3. Angle Between Vectors</text>
+      <text class="sub-label" x="8" y="172" fill="#9399b2">Interior angle of &#x25B3;: &#x3B8;</text>
+      <text class="sub-label" x="8" y="190" fill="#9399b2">Angle between &#x1D44E; &amp; &#x1D44F;: 180&#x00B0; &#x2212; &#x3B8;</text>
+
+      <text class="math-text" x="8" y="216">&#x1D44E; &#x22C5; &#x1D44F; = &#x1D44E;&#x1D44F; cos(180&#x00B0; &#x2212; &#x3B8;)</text>
+      <text class="math-text" x="8" y="240">&#x1D44E; &#x22C5; &#x1D44F; = &#x2212;&#x1D44E;&#x1D44F; cos &#x3B8;</text>
+
+      <!-- Divider -->
+      <line x1="0" y1="258" x2="208" y2="258" stroke="#313244" stroke-width="1.2" />
+
+      <!-- Conclusion -->
+      <text class="sub-label" x="0" y="278" fill="#fab387">4. Law of Cosines</text>
+      <rect x="0" y="286" width="208" height="32" rx="6" fill="#313244" stroke="#fab387" stroke-width="1" />
+      <text class="math-text" x="12" y="308" fill="#fab387" font-weight="bold">&#x1D450;&#x00B2; = &#x1D44E;&#x00B2; + &#x1D44F;&#x00B2; &#x2212; 2&#x1D44E;&#x1D44F; cos &#x3B8;</text>
+    </g>
+  </g>
+</svg>
