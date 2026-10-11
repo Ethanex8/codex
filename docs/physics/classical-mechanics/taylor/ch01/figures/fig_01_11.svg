@@ -41,7 +41,7 @@
   <!-- Header -->
   <g transform="translate(35, 40)">
     <text class="title" x="0" y="0">Elliptic Orbit Kinematics</text>
-    <text class="subtitle" x="0" y="20">Harmonic motion in 2D: r(t) = b cos(&omega;t) x&#770; + c sin(&omega;t) y&#770;</text>
+    <text class="subtitle" x="0" y="20">Harmonic motion in 2D: r(t) = b cos(ωt) x&#770; + c sin(ωt) y&#770;</text>
   </g>
 
   <!-- Left: Geometry Area (Origin at (215, 305)) -->
@@ -59,13 +59,13 @@
 
     <!-- Intercept markers and labels -->
     <text class="sub-label" x="372" y="325" fill="#89b4fa">b</text>
-    <text class="sub-label" x="45" y="325" fill="#89b4fa">&minus;b</text>
+    <text class="sub-label" x="45" y="325" fill="#89b4fa">−b</text>
     <text class="sub-label" x="222" y="202" fill="#a6e3a1">c</text>
-    <text class="sub-label" x="222" y="415" fill="#a6e3a1">&minus;c</text>
+    <text class="sub-label" x="222" y="415" fill="#a6e3a1">−c</text>
 
     <!-- Counterclockwise direction arrow along ellipse -->
     <path d="M 215 205 A 155 100 0 0 0 135 220" fill="none" stroke="#fab387" stroke-width="2" marker-end="url(#arrow-orange)" />
-    <text class="angle-label" x="175" y="195" fill="#fab387">&omega;</text>
+    <text class="angle-label" x="175" y="195" fill="#fab387">ω</text>
 
     <!-- Position at t = 0 -->
     <circle cx="370" cy="305" r="3.5" fill="#6c7086" />
@@ -81,8 +81,8 @@
     <!-- Component projection lines -->
     <line x1="324.6" y1="234.3" x2="324.6" y2="305" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
     <line x1="324.6" y1="234.3" x2="215" y2="234.3" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
-    <text class="sub-label" x="300" y="322" fill="#89b4fa">b cos(&omega;t)</text>
-    <text class="sub-label" x="135" y="238" fill="#a6e3a1">c sin(&omega;t)</text>
+    <text class="sub-label" x="300" y="322" fill="#89b4fa">b cos(ωt)</text>
+    <text class="sub-label" x="135" y="238" fill="#a6e3a1">c sin(ωt)</text>
 
     <!-- Velocity vector v(t): dx = -b*omega*sin(45) < 0, dy = c*omega*cos(45) > 0 (upward in svg is negative dy) -->
     <!-- Scaling for visual clarity: dx_vis = -75, dy_vis = -48 -->
@@ -115,36 +115,36 @@
     <g transform="translate(16, 54)">
       <!-- Step 1: Trajectory Equation -->
       <text class="sub-label" x="0" y="0">1. Orbit Geometry (Ellipse)</text>
-      <text class="math-text" x="8" y="20" fill="#89b4fa">x/b = cos(&omega;t), &nbsp; y/c = sin(&omega;t)</text>
-      <text class="math-text" x="8" y="40" fill="#89b4fa">(x/b)&sup2; + (y/c)&sup2; = 1</text>
-      <text class="sub-label" x="8" y="58" fill="#9399b2">&bull; Center: origin (0, 0)</text>
-      <text class="sub-label" x="8" y="74" fill="#9399b2">&bull; Semi-axes: b along x, c along y</text>
+      <text class="math-text" x="8" y="20" fill="#89b4fa">x/b = cos(ωt),   y/c = sin(ωt)</text>
+      <text class="math-text" x="8" y="40" fill="#89b4fa">(x/b)² + (y/c)² = 1</text>
+      <text class="sub-label" x="8" y="58" fill="#9399b2">• Center: origin (0, 0)</text>
+      <text class="sub-label" x="8" y="74" fill="#9399b2">• Semi-axes: b along x, c along y</text>
 
       <!-- Step 2: Velocity -->
       <text class="sub-label" x="0" y="104">2. Velocity Vector</text>
       <text class="math-text" x="8" y="124" fill="#a6e3a1">v(t) = dr/dt</text>
-      <text class="math-text" x="8" y="144" fill="#a6e3a1">v = &minus;&omega;b sin(&omega;t) x&#770; + &omega;c cos(&omega;t) y&#770;</text>
-      <text class="sub-label" x="8" y="162" fill="#9399b2">&bull; Speed varies throughout orbit</text>
-      <text class="sub-label" x="8" y="178" fill="#9399b2">&bull; Tangent to the ellipse at all t</text>
+      <text class="math-text" x="8" y="144" fill="#a6e3a1">v = −ωb sin(ωt) x&#770; + ωc cos(ωt) y&#770;</text>
+      <text class="sub-label" x="8" y="162" fill="#9399b2">• Speed varies throughout orbit</text>
+      <text class="sub-label" x="8" y="178" fill="#9399b2">• Tangent to the ellipse at all t</text>
 
       <!-- Step 3: Acceleration -->
       <text class="sub-label" x="0" y="208">3. Acceleration Vector</text>
-      <text class="math-text" x="8" y="228" fill="#f38ba8">a(t) = dv/dt = &minus;&omega;&sup2; r(t)</text>
-      <text class="sub-label" x="8" y="248" fill="#9399b2">&bull; Directed inward toward origin O</text>
-      <text class="sub-label" x="8" y="264" fill="#9399b2">&bull; Proportional to distance |r|</text>
+      <text class="math-text" x="8" y="228" fill="#f38ba8">a(t) = dv/dt = −ω² r(t)</text>
+      <text class="sub-label" x="8" y="248" fill="#9399b2">• Directed inward toward origin O</text>
+      <text class="sub-label" x="8" y="264" fill="#9399b2">• Proportional to distance |r|</text>
 
       <!-- Divider -->
       <line x1="0" y1="276" x2="228" y2="276" stroke="#313244" stroke-width="1.2" />
 
       <!-- Step 4: Orbital Properties -->
       <text class="sub-label" x="0" y="296" fill="#fab387">4. Motion Characteristics</text>
-      <text class="sub-label" x="8" y="316">&bull; Period: T = 2&pi; / &omega;</text>
-      <text class="sub-label" x="8" y="334">&bull; Sense: Counterclockwise</text>
-      <text class="sub-label" x="8" y="352">&bull; Degeneracy: Circle if b = c</text>
+      <text class="sub-label" x="8" y="316">• Period: T = 2π / ω</text>
+      <text class="sub-label" x="8" y="334">• Sense: Counterclockwise</text>
+      <text class="sub-label" x="8" y="352">• Degeneracy: Circle if b = c</text>
 
       <!-- Highlight Box -->
       <rect x="0" y="362" width="228" height="24" rx="4" fill="#313244" stroke="#fab387" stroke-width="0.8" />
-      <text class="math-text" x="10" y="378" fill="#fab387" font-size="12px">Elliptic Orbit, Period T = 2&pi;/&omega;</text>
+      <text class="math-text" x="10" y="378" fill="#fab387" font-size="12px">Elliptic Orbit, Period T = 2π/ω</text>
     </g>
   </g>
 </svg>

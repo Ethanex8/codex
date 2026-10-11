@@ -38,7 +38,7 @@
   <!-- Header -->
   <g transform="translate(35, 40)">
     <text class="title" x="0" y="0">Vector Geometry &amp; The Law of Cosines</text>
-    <text class="subtitle" x="0" y="20">Head-to-tail triangle addition: c = a + b with interior angle &theta;</text>
+    <text class="subtitle" x="0" y="20">Head-to-tail triangle addition: c = a + b with interior angle θ</text>
   </g>
 
   <!-- Left: Geometry Visual Area (Origin at (80, 390)) -->
@@ -52,11 +52,11 @@
 
     <!-- Angle theta (interior at B) -->
     <path d="M 265 390 A 45 45 0 0 1 292.7 348.5" fill="#f38ba8" fill-opacity="0.18" stroke="#f38ba8" stroke-width="1.8" />
-    <text class="angle-label" x="272" y="374" fill="#f38ba8">&theta;</text>
+    <text class="angle-label" x="272" y="374" fill="#f38ba8">θ</text>
 
     <!-- Angle (180 - theta) (exterior between +a extension and b) -->
     <path d="M 360 390 A 50 50 0 0 0 290.8 343.8" fill="#fab387" fill-opacity="0.15" stroke="#fab387" stroke-width="1.8" />
-    <text class="angle-label" x="328" y="360" fill="#fab387">180&deg; &minus; &theta;</text>
+    <text class="angle-label" x="328" y="360" fill="#fab387">180° − θ</text>
 
     <!-- Vector a: from (80, 390) to (310, 390) -->
     <line x1="80" y1="390" x2="304" y2="390" stroke="#89b4fa" stroke-width="3.5" marker-end="url(#arrow-blue)" />
@@ -96,16 +96,16 @@
 
       <!-- Step 2 -->
       <text class="sub-label" x="0" y="74">2. Vector Identity</text>
-      <text class="math-text" x="8" y="96">c&sup2; = (a + b) &middot; (a + b)</text>
-      <text class="math-text" x="8" y="120">c&sup2; = a&sup2; + b&sup2; + 2(a &middot; b)</text>
+      <text class="math-text" x="8" y="96">c² = (a + b) · (a + b)</text>
+      <text class="math-text" x="8" y="120">c² = a² + b² + 2(a · b)</text>
 
       <!-- Step 3 -->
       <text class="sub-label" x="0" y="152">3. Angle Between Vectors</text>
-      <text class="sub-label" x="8" y="172" fill="#9399b2">Interior angle of &Delta;: &theta;</text>
-      <text class="sub-label" x="8" y="190" fill="#9399b2">Angle between a &amp; b: 180&deg; &minus; &theta;</text>
+      <text class="sub-label" x="8" y="172" fill="#9399b2">Interior angle of Δ: θ</text>
+      <text class="sub-label" x="8" y="190" fill="#9399b2">Angle between a &amp; b: 180° − θ</text>
 
-      <text class="math-text" x="8" y="216">a &middot; b = ab cos(180&deg; &minus; &theta;)</text>
-      <text class="math-text" x="8" y="240">a &middot; b = &minus;ab cos &theta;</text>
+      <text class="math-text" x="8" y="216">a · b = ab cos(180° − θ)</text>
+      <text class="math-text" x="8" y="240">a · b = −ab cos θ</text>
 
       <!-- Divider -->
       <line x1="0" y1="258" x2="208" y2="258" stroke="#313244" stroke-width="1.2" />
@@ -113,7 +113,7 @@
       <!-- Conclusion -->
       <text class="sub-label" x="0" y="278" fill="#fab387">4. Law of Cosines</text>
       <rect x="0" y="286" width="208" height="32" rx="6" fill="#313244" stroke="#fab387" stroke-width="1" />
-      <text class="math-text" x="12" y="308" fill="#fab387" font-weight="bold">c&sup2; = a&sup2; + b&sup2; &minus; 2ab cos &theta;</text>
+      <text class="math-text" x="12" y="308" fill="#fab387" font-weight="bold">c² = a² + b² − 2ab cos θ</text>
     </g>
   </g>
 </svg>

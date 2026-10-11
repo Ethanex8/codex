@@ -58,7 +58,7 @@
 
     <!-- Counterclockwise rotation indicator arrow on path -->
     <path d="M 220 160 A 145 145 0 0 0 165 171" fill="none" stroke="#fab387" stroke-width="2" marker-end="url(#arrow-orange)" />
-    <text class="angle-label" x="190" y="148" fill="#fab387">&omega;</text>
+    <text class="angle-label" x="190" y="148" fill="#fab387">ω</text>
 
     <!-- Initial position at t = 0 -->
     <circle cx="365" cy="305" r="3.5" fill="#6c7086" />
@@ -66,7 +66,7 @@
 
     <!-- Angle theta = omega * t arc (theta = 50 deg, r = 42) -->
     <path d="M 262 305 A 42 42 0 0 0 247 272.8" fill="#fab387" fill-opacity="0.2" stroke="#fab387" stroke-width="1.6" />
-    <text class="angle-label" x="268" y="290" fill="#fab387">&theta; = &omega;t</text>
+    <text class="angle-label" x="268" y="290" fill="#fab387">θ = ωt</text>
 
     <!-- Position vector r(t): from (220, 305) to P(313.2, 193.9) -->
     <line x1="220" y1="305" x2="308" y2="200" stroke="#89b4fa" stroke-width="3" marker-end="url(#arrow-blue)" />
@@ -75,8 +75,8 @@
     <!-- Projection lines for components of r -->
     <line x1="313.2" y1="193.9" x2="313.2" y2="305" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
     <line x1="313.2" y1="193.9" x2="220" y2="193.9" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
-    <text class="sub-label" x="282" y="322" fill="#89b4fa">R cos(&omega;t)</text>
-    <text class="sub-label" x="135" y="198" fill="#89b4fa">R sin(&omega;t)</text>
+    <text class="sub-label" x="282" y="322" fill="#89b4fa">R cos(ωt)</text>
+    <text class="sub-label" x="135" y="198" fill="#89b4fa">R sin(ωt)</text>
 
     <!-- Velocity vector v(t): Tangential, angle 140 deg -->
     <!-- From P(313.2, 193.9), dx = -70, dy = -58.7 -> end (243.2, 135.2) -->
@@ -107,34 +107,34 @@
     <g transform="translate(16, 56)">
       <!-- Position -->
       <text class="sub-label" x="0" y="0">1. Position Vector</text>
-      <text class="math-text" x="8" y="20" fill="#89b4fa">r(t) = R cos(&omega;t) x&#770; + R sin(&omega;t) y&#770;</text>
+      <text class="math-text" x="8" y="20" fill="#89b4fa">r(t) = R cos(ωt) x&#770; + R sin(ωt) y&#770;</text>
       <text class="sub-label" x="8" y="38" fill="#9399b2">|r| = R (constant radius)</text>
 
       <!-- Velocity -->
       <text class="sub-label" x="0" y="68">2. Velocity Vector</text>
       <text class="math-text" x="8" y="88" fill="#a6e3a1">v(t) = dr/dt</text>
-      <text class="math-text" x="8" y="108" fill="#a6e3a1">v(t) = &minus;&omega;R sin(&omega;t) x&#770; + &omega;R cos(&omega;t) y&#770;</text>
-      <text class="sub-label" x="8" y="126" fill="#9399b2">Speed: v = |v| = &omega;R</text>
-      <text class="sub-label" x="8" y="142" fill="#9399b2">v &middot; r = 0 (tangential to circle)</text>
+      <text class="math-text" x="8" y="108" fill="#a6e3a1">v(t) = −ωR sin(ωt) x&#770; + ωR cos(ωt) y&#770;</text>
+      <text class="sub-label" x="8" y="126" fill="#9399b2">Speed: v = |v| = ωR</text>
+      <text class="sub-label" x="8" y="142" fill="#9399b2">v · r = 0 (tangential to circle)</text>
 
       <!-- Acceleration -->
       <text class="sub-label" x="0" y="172">3. Acceleration Vector</text>
-      <text class="math-text" x="8" y="192" fill="#f38ba8">a(t) = dv/dt = d&sup2;r/dt&sup2;</text>
-      <text class="math-text" x="8" y="212" fill="#f38ba8">a(t) = &minus;&omega;&sup2;R cos(&omega;t) x&#770; &minus; &omega;&sup2;R sin(&omega;t) y&#770;</text>
-      <text class="math-text" x="8" y="232" fill="#f38ba8">a(t) = &minus;&omega;&sup2; r(t)</text>
+      <text class="math-text" x="8" y="192" fill="#f38ba8">a(t) = dv/dt = d²r/dt²</text>
+      <text class="math-text" x="8" y="212" fill="#f38ba8">a(t) = −ω²R cos(ωt) x&#770; − ω²R sin(ωt) y&#770;</text>
+      <text class="math-text" x="8" y="232" fill="#f38ba8">a(t) = −ω² r(t)</text>
 
       <!-- Divider -->
       <line x1="0" y1="248" x2="228" y2="248" stroke="#313244" stroke-width="1.2" />
 
       <!-- Physical Properties -->
       <text class="sub-label" x="0" y="268" fill="#fab387">4. Motion Characteristics</text>
-      <text class="sub-label" x="8" y="288">&bull; Magnitude: a = &omega;&sup2;R = v&sup2; / R</text>
-      <text class="sub-label" x="8" y="306">&bull; Direction: Centripetal (&minus;r&#770;)</text>
-      <text class="sub-label" x="8" y="324">&bull; Directed toward center O</text>
+      <text class="sub-label" x="8" y="288">• Magnitude: a = ω²R = v² / R</text>
+      <text class="sub-label" x="8" y="306">• Direction: Centripetal (−r&#770;)</text>
+      <text class="sub-label" x="8" y="324">• Directed toward center O</text>
 
       <!-- Highlight Box -->
       <rect x="0" y="336" width="228" height="26" rx="4" fill="#313244" stroke="#fab387" stroke-width="0.8" />
-      <text class="math-text" x="12" y="353" fill="#fab387" font-size="13px">a = &minus;(v&sup2;/R) r&#770; (centripetal)</text>
+      <text class="math-text" x="12" y="353" fill="#fab387" font-size="13px">a = −(v²/R) r&#770; (centripetal)</text>
     </g>
   </g>
 </svg>
