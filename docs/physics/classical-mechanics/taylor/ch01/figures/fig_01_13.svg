@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520">
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#89b4fa" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fab387" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f38ba8" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#6c7086" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="520" fill="#1e1e2e" />
+
+  <!-- LEFT SIDE: Geometry Setup (Origin at (100, 380)) -->
+  <!-- Coordinate Axes -->
+  <line x1="80" y1="380" x2="420" y2="380" stroke="#45475a" stroke-width="2" marker-end="url(#arrow-muted)" />
+  <text x="425" y="384" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500">x (along û)</text>
+
+  <line x1="100" y1="400" x2="100" y2="100" stroke="#45475a" stroke-width="2" marker-end="url(#arrow-muted)" />
+  <text x="95" y="90" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" text-anchor="middle">y</text>
+
+  <text x="85" y="398" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">O</text>
+
+  <!-- Right Angle Indicator at (316.5, 380) -->
+  <path d="M 296.5 380 L 296.5 360 L 316.5 360" fill="none" stroke="#6c7086" stroke-width="1.5" />
+
+  <!-- Projection Dashed Lines -->
+  <line x1="316.5" y1="130" x2="316.5" y2="380" stroke="#f38ba8" stroke-width="2" stroke-dasharray="5 5" />
+  <line x1="100" y1="130" x2="316.5" y2="130" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="4 4" />
+
+  <!-- Angle Theta Arc (radius 60) -->
+  <path d="M 160 380 A 60 60 0 0 0 139.3 334.6" fill="none" stroke="#fab387" stroke-width="2" />
+  <text x="172" y="358" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600">θ</text>
+
+  <!-- Parallel Component Vector b_parallel along x-axis -->
+  <line x1="100" y1="380" x2="316.5" y2="380" stroke="#89b4fa" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+  <text x="208" y="410" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" text-anchor="middle">b_∥ = û · b = b cos θ</text>
+
+  <!-- Perpendicular Component Vector b_perp (vertical leg) -->
+  <line x1="316.5" y1="380" x2="316.5" y2="130" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)" />
+  <text x="328" y="260" fill="#f38ba8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">|û × b| = b sin θ</text>
+  <text x="328" y="278" fill="#f38ba8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">(= b_⊥)</text>
+
+  <!-- Unit vector u on the axis -->
+  <line x1="100" y1="380" x2="200" y2="380" stroke="#a6e3a1" stroke-width="4" marker-end="url(#arrow-green)" />
+  <text x="150" y="368" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">û (|û| = 1)</text>
+
+  <!-- Vector b (Hypotenuse) -->
+  <line x1="100" y1="380" x2="316.5" y2="130" stroke="#fab387" stroke-width="3.5" marker-end="url(#arrow-orange)" />
+  <text x="180" y="240" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700">b</text>
+  <text x="175" y="258" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">(magnitude b)</text>
+
+  <!-- Cross product direction badge -->
+  <g transform="translate(100, 455)">
+    <circle cx="15" cy="0" r="10" fill="#313244" stroke="#a6e3a1" stroke-width="2" />
+    <circle cx="15" cy="0" r="3.5" fill="#a6e3a1" />
+    <text x="35" y="4" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">û × b points along +ẑ (out of page), |û × b| = b sin θ</text>
+  </g>
+
+  <!-- RIGHT SIDE: Info / Derivation Card ($x \ge 475$) -->
+  <rect x="475" y="30" width="225" height="460" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+
+  <!-- Card Title -->
+  <text x="492" y="62" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Decomposition &amp; Pythagorean</text>
+  <line x1="492" y1="74" x2="683" y2="74" stroke="#45475a" stroke-width="1" />
+
+  <!-- Section: Products -->
+  <text x="492" y="100" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Scalar &amp; Vector Products:</text>
+  <text x="492" y="122" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">û · b = |û| b cos θ = b cos θ</text>
+  <text x="492" y="142" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">↳ Projection parallel to û</text>
+
+  <text x="492" y="172" fill="#f38ba8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">|û × b| = |û| b sin θ = b sin θ</text>
+  <text x="492" y="192" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">↳ Projection normal to û</text>
+
+  <!-- Section: Orthogonal Legs -->
+  <line x1="492" y1="212" x2="683" y2="212" stroke="#313244" stroke-width="1" />
+  <text x="492" y="235" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Orthogonal Components:</text>
+  <text x="492" y="258" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">b_∥ = (û · b) û</text>
+  <text x="492" y="280" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">b_⊥ = b − (û · b) û</text>
+  <text x="492" y="302" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Since b_∥ ⊥ b_⊥ :</text>
+  <text x="492" y="324" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">b² = b_∥² + b_⊥²</text>
+
+  <!-- Highlight Result Box -->
+  <rect x="487" y="344" width="201" height="92" rx="6" fill="#313244" stroke="#89b4fa" stroke-width="1.5" />
+  <text x="500" y="370" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Trigonometric Identity:</text>
+  <text x="500" y="392" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">(b cos θ)² + (b sin θ)²</text>
+  <text x="500" y="412" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700">= b² (cos²θ + sin²θ) = b²</text>
+  <text x="500" y="427" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Q.E.D.</text>
+
+  <!-- Bottom Buffer Note -->
+  <text x="492" y="468" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Geometry: Right-angled triangle</text>
+</svg>
