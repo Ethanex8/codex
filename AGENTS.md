@@ -46,7 +46,8 @@
 - **Visual Style Tokens**:
   - **Theme**: Catppuccin Mocha. Background: `#1e1e2e`, Main Text: `#cdd6f4`, Muted / Axes: `#9399b2`, Box Edges: `#6c7086`.
   - **Accent Colors**: Blue (`#89b4fa`), Red (`#f38ba8`), Orange (`#fab387`), Green (`#a6e3a1`).
-  - **Canvas & Font**: `viewBox="0 0 720 520"`, sans-serif font family, minimum 12px font size.
+  - **Canvas & Font**: `viewBox="0 0 720 520"`, strictly system sans-serif font family (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`), minimum 12px font size.
+  - **Typography & Encoding**: Strictly use standard ASCII / basic Latin characters for math variables (e.g., `r(t)`, `v(t)`, `a(t)`, `x̂`, `ŷ`) and standard named XML/HTML entities for Greek letters and operators (`&omega;`, `&theta;`, `&minus;`, `&sup2;`, `&middot;`, `&bull;`). Never introduce secondary serif/math fonts (e.g., "Cambria Math") or Plane 1 Mathematical Alphanumeric Unicode code points (`U+1D400`–`U+1D7FF`), which fail to render across mobile and cross-platform SVG viewers.
 - **Dual-Track Workflow**:
   - **Track A (Geometric / Conceptual)**: Author clean, standalone Native SVGs (`fig_XX_YY.svg`) directly without Python scripts.
   - **Track B (Computational / Analytical)**: Author paired Python scripts (`fig_XX_YY.py`) following `docs/templates/diagram-template.py` to generate `fig_XX_YY.svg`. Commit both.
