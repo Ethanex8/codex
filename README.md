@@ -57,34 +57,24 @@ mkdocs build --strict
 
 ## ✍️ Authoring New Solutions
 
-1. Check the [Solution Template](docs/templates/solution-template.md) for structure and style guidelines.
-2. Use LaTeX syntax for mathematical expressions:
-   - Inline math: `$E = mc^2$`
-   - Display math:
-     ```markdown
-     $$
-     \oint \mathbf{B} \cdot d\mathbf{l} = \mu_0 I_{\text{enc}}
-     $$
-     ```
-3. Add the new problem file to `mkdocs.yml` under `nav`.
+Solutions follow the standard schema documented in [`AGENTS.md`](AGENTS.md):
+1. **Frontmatter**: Standard reference admonition with textbook, chapter, problem, and topic metadata.
+2. **Fair-Use Paraphrasing**: A clean summary of given quantities and targets.
+3. **LaTeX Math**: Use display math blocks (`$$...$$`) with mandatory blank-line padding before and after for MathJax compatibility.
+4. **Navigation**: Append the new problem under the active chapter block in `mkdocs.yml`.
 
 ---
 
 ## 🎨 Custom Diagrams Workflow
 
-All diagrams (free-body diagrams, coordinate frames, geometric setups, plots) are authored with **Python** and exported as **SVG vector graphics**:
+Codex employs a purposeful **Dual-Track Workflow** for diagrams (detailed in [`AGENTS.md`](AGENTS.md)):
 
-1. Use the starter template at [`docs/templates/diagram-template.py`](docs/templates/diagram-template.py).
-2. Save it in a `figures/` folder alongside the problem (e.g., `figures/fig_01_01.py`).
-3. Run `python figures/fig_01_01.py` to generate `figures/fig_01_01.svg`.
-4. Embed the SVG in the solution Markdown:
-   ```markdown
-   ![Diagram](figures/fig_01_01.svg)
-   *Figure: Description. Source: [`figures/fig_01_01.py`](figures/fig_01_01.py).*
-   ```
-5. Commit **both** the `.py` source and `.svg` asset so diagrams remain 100% version-controlled, diffable, and editable.
-
-See the [Custom Diagrams Guide](docs/templates/diagrams.md) for full styling details.
+- **Track A (Geometric & Conceptual)**:
+  - Vector decompositions, coordinate frames, right-triangle proofs, free-body diagrams.
+  - Authored directly as clean, semantic **Native SVGs** (`figures/fig_XX_YY.svg`) using the Catppuccin Mocha theme tokens.
+- **Track B (Computational & Analytical)**:
+  - ODE trajectories, numerical phase plots, field curves.
+  - Authored as Python scripts (`figures/fig_XX_YY.py`) generating vector SVGs (`figures/fig_XX_YY.svg`). Both files are committed to Git.
 
 ---
 

@@ -51,7 +51,8 @@
 - **Layout & Collision Invariants**:
   - **Side-by-Side Cards**: When using an info/derivation card on the right ($x \ge 475$), offset coordinate origins leftward ($x \le 180$) and bound horizontal axes/labels to $x \le 440$ to ensure a minimum 35px visual buffer.
   - **Stacked Layout for Complex Setups**: When vector configurations require wide horizontal spans or lengthy component derivations, use a vertical split: vector geometry in the upper zone ($y \in [40, 290]$) and a full-width derivation card across the bottom ($y \in [320, 500]$).
-  - **Label & Projection Clearance**: Keep projection intervals, right-angle markers, and vector labels padded away from axis lines and arrowheads. Never draw vector strokes directly atop axis strokes without a vertical offset or distinctive stroke contrast.
-- **In-Chat Preview via Generative UI**: Render diagram previews in chat responses using an HTML artifact in the conversation artifact directory wrapping the SVG markup inside an `<agent-embed src="file:///<path>/fig_XX_YY_preview.html"></agent-embed>` block. Never re-read skill docs or external templates to construct this.
+- **In-Chat Preview**: Render diagram previews in chat responses using an HTML artifact in the conversation artifact directory wrapping the SVG markup inside an `<agent-embed src="file:///<path>/fig_XX_YY_preview.html"></agent-embed>` block. Never re-read external skill docs or templates to construct this.
+
+## 6. Workspace Tooling & Permissions
 - **Project Permissions**: Project-specific tool permissions belong in `~/.gemini/config/projects/<project-id>.json`, never in global permission configs.
 
