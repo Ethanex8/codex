@@ -9,6 +9,7 @@
 - **Strictly Targeted Solutions**: Keep authored solutions strictly focused on what the exercise asks for. Do not include unrequested remarks, checks, or tangent verification sections.
 - **Mobile-Friendly Review**: Always format and print the full mathematical solution directly into the chat response so the user can review and verify on mobile without relying on a localhost browser server.
 - **Approval Gate & Remote Sync**: Wait for explicit user confirmation before staging and committing. Once committed, push to `origin main` so GitHub Pages deploys the update, then automatically fetch and present the next problem in sequence.
+- **Deployment Architecture**: Deployments to GitHub Pages are handled purely via direct Actions artifacts (`upload-pages-artifact` & `deploy-pages`) from `main`. Never re-introduce the `gh-pages` branch or run `mkdocs gh-deploy`.
 - **Personal Scope**: This is a personal repository. Never add "Contributing" guidelines, templates, or pull request prompts.
 
 ## 2. Directory Hierarchy & Solution Naming Contract
@@ -47,6 +48,10 @@
 - **Dual-Track Workflow**:
   - **Track A (Geometric / Conceptual)**: Author clean, standalone Native SVGs (`fig_XX_YY.svg`) directly without Python scripts.
   - **Track B (Computational / Analytical)**: Author paired Python scripts (`fig_XX_YY.py`) following `docs/templates/diagram-template.py` to generate `fig_XX_YY.svg`. Commit both.
+- **Layout & Collision Invariants**:
+  - **Side-by-Side Cards**: When using an info/derivation card on the right ($x \ge 475$), offset coordinate origins leftward ($x \le 180$) and bound horizontal axes/labels to $x \le 440$ to ensure a minimum 35px visual buffer.
+  - **Stacked Layout for Complex Setups**: When vector configurations require wide horizontal spans or lengthy component derivations, use a vertical split: vector geometry in the upper zone ($y \in [40, 290]$) and a full-width derivation card across the bottom ($y \in [320, 500]$).
+  - **Label & Projection Clearance**: Keep projection intervals, right-angle markers, and vector labels padded away from axis lines and arrowheads. Never draw vector strokes directly atop axis strokes without a vertical offset or distinctive stroke contrast.
 - **In-Chat Preview via Generative UI**: Render diagram previews in chat responses using an HTML artifact in the conversation artifact directory wrapping the SVG markup inside an `<agent-embed src="file:///<path>/fig_XX_YY_preview.html"></agent-embed>` block. Never re-read skill docs or external templates to construct this.
 - **Project Permissions**: Project-specific tool permissions belong in `~/.gemini/config/projects/<project-id>.json`, never in global permission configs.
 
