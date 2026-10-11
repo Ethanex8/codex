@@ -9,6 +9,7 @@
 - **Strictly Targeted Solutions**: Keep authored solutions strictly focused on what the exercise asks for. Do not include unrequested remarks, checks, or tangent verification sections.
 - **Mobile-Friendly Review**: Always format and print the full mathematical solution directly into the chat response so the user can review and verify on mobile without relying on a localhost browser server.
 - **Approval Gate & Remote Sync**: Wait for explicit user confirmation before staging and committing. Once committed, push to `origin main` so GitHub Pages deploys the update, then automatically fetch and present the next problem in sequence.
+- **Build Verification**: When modifying documentation structure or `mkdocs.yml`, verify site integrity locally using `python -m mkdocs build --strict`.
 - **Deployment Architecture**: Deployments to GitHub Pages are handled purely via direct Actions artifacts (`upload-pages-artifact` & `deploy-pages`) from `main`. Never re-introduce the `gh-pages` branch or run `mkdocs gh-deploy`.
 - **Personal Scope**: This is a personal repository. Never add "Contributing" guidelines, templates, or pull request prompts.
 
@@ -31,6 +32,7 @@
       - **Topic**: [Topic tags]
   ```
 - **Diagram Prerequisite**: Purely algebraic or component evaluations do NOT have a diagram or figures section. Only create diagrams (`figures/fig_<CC>_<PP>.svg`) when the problem involves geometric configurations, trajectories, or visual setups. Never inspect previous problem files to check for figure precedent.
+- **No Auxiliary Templates**: All frontmatter schemas, diagram standards, and solution layouts are strictly self-contained within `AGENTS.md`. Never create or maintain auxiliary markdown templates in `docs/templates/`.
 
 ## 3. Local Assets & Security
 - **Strictly Local**: Textbook PDFs and generated image snippets must reside strictly in `_local_data/` (or external paths) and be excluded by `.gitignore` (`_local_data/`, `*.pdf`). Never stage or commit textbook PDFs or raw copyright scans.
