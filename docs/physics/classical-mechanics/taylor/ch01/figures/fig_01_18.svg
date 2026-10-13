@@ -93,42 +93,21 @@
   </g>
 
 
-  <!-- RIGHT SIDE: Info / Derivation Card ($x \ge 475$) -->
-  <rect x="475" y="30" width="225" height="460" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  <!-- RIGHT SIDE: Compact Geometric Legend Card ($x \ge 475$) -->
+  <rect x="475" y="70" width="225" height="235" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
 
   <!-- Card Title -->
-  <text x="492" y="60" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Area &amp; Law of Sines</text>
-  <line x1="492" y1="72" x2="683" y2="72" stroke="#45475a" stroke-width="1" />
+  <text x="492" y="100" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Geometric Triangle Setup</text>
+  <line x1="492" y1="112" x2="683" y2="112" stroke="#45475a" stroke-width="1" />
 
-  <!-- Section (a): Right Triangle Area Sum -->
-  <text x="492" y="94" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">(a) Area via Altitude &amp; Closure:</text>
-  <text x="492" y="115" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Base AC = b, Altitude BD = h :</text>
-  <text x="492" y="135" fill="#f38ba8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">h = a sin γ</text>
-  <text x="492" y="155" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Area = ½ b h = ½ a b sin γ</text>
+  <!-- Geometric Elements -->
+  <text x="492" y="138" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Base &amp; Altitude:</text>
+  <text x="492" y="162" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">Base: AC = b</text>
+  <text x="492" y="184" fill="#f38ba8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">Altitude: h = a sin γ</text>
 
-  <text x="492" y="180" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">Tail-to-tail angle: π − γ</text>
-  <text x="492" y="198" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">|a × b| = ab sin(π − γ) = ab sin γ</text>
-  <text x="492" y="218" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600">⟹ Area = ½ |a × b|</text>
-
-  <!-- Closure step -->
-  <line x1="492" y1="235" x2="683" y2="235" stroke="#313244" stroke-width="1" />
-  <text x="492" y="255" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600">Closure: a + b + c = 0</text>
-  <text x="492" y="275" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">a × (a + b + c) = 0 ⟹ a × b = c × a</text>
-  <text x="492" y="295" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">b × (a + b + c) = 0 ⟹ b × c = a × b</text>
-  <text x="492" y="316" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">⟹ |a × b| = |b × c| = |c × a|</text>
-
-  <line x1="492" y1="332" x2="683" y2="332" stroke="#313244" stroke-width="1" />
-
-  <!-- Section (b): Law of Sines -->
-  <text x="492" y="354" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">(b) Law of Sines:</text>
-  <text x="492" y="374" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">ab sin γ = bc sin α = ca sin β</text>
-  <text x="492" y="394" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">Divide by a b c :</text>
-
-  <!-- Highlight Result Box -->
-  <rect x="487" y="405" width="201" height="50" rx="6" fill="#313244" stroke="#a6e3a1" stroke-width="1.5" />
-  <text x="500" y="426" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">sin α / a = sin β / b = sin γ / c</text>
-  <text x="500" y="444" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700">⟹ a/sin α = b/sin β = c/sin γ</text>
-
-  <!-- Bottom Buffer Note -->
-  <text x="492" y="475" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Q.E.D. via Vector Cross Products</text>
+  <!-- Cross Product Area Box -->
+  <rect x="487" y="202" width="201" height="85" rx="6" fill="#313244" stroke="#a6e3a1" stroke-width="1.2" />
+  <text x="498" y="226" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Vector Area Form:</text>
+  <text x="498" y="248" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Area = ½ |a × b|</text>
+  <text x="498" y="270" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">= ½ |b × c| = ½ |c × a|</text>
 </svg>

@@ -71,39 +71,21 @@
     <text x="14" y="42" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Fingers curl from r (along +x̂) to s ⟹ Thumb points along +ẑ</text>
   </g>
 
-  <!-- RIGHT SIDE: Info / Derivation Card ($x \ge 475$) -->
-  <rect x="475" y="30" width="225" height="460" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  <!-- RIGHT SIDE: Compact Geometric Legend Card ($x \ge 475$) -->
+  <rect x="475" y="70" width="225" height="235" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
 
   <!-- Card Title -->
-  <text x="492" y="62" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Equivalence Proof</text>
-  <line x1="492" y1="74" x2="683" y2="74" stroke="#45475a" stroke-width="1" />
+  <text x="492" y="100" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Cross Product Geometry</text>
+  <line x1="492" y1="112" x2="683" y2="112" stroke="#45475a" stroke-width="1" />
 
-  <!-- Step 1: Chosen Frame -->
-  <text x="492" y="98" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">1. Coordinate Frame:</text>
-  <text x="492" y="120" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">r = (r, 0, 0)</text>
-  <text x="492" y="140" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">s = (s cos θ, s sin θ, 0)</text>
-  <text x="492" y="160" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">(where 0 ≤ θ ≤ π)</text>
+  <!-- Coordinate Triad -->
+  <text x="492" y="138" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Aligned Coordinate Frame:</text>
+  <text x="492" y="162" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">r = (r, 0, 0)</text>
+  <text x="492" y="186" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">s = (s cos θ, s sin θ, 0)</text>
 
-  <!-- Step 2: Component Formula -->
-  <line x1="492" y1="178" x2="683" y2="178" stroke="#313244" stroke-width="1" />
-  <text x="492" y="202" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">2. Apply Eq. (1.9):</text>
-  <text x="492" y="224" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">(r × s)_x = r_y s_z − r_z s_y = 0</text>
-  <text x="492" y="244" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">(r × s)_y = r_z s_x − r_x s_z = 0</text>
-  <text x="492" y="266" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600">(r × s)_z = r_x s_y − r_y s_x</text>
-  <text x="508" y="286" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">= (r)(s sin θ) − 0</text>
-  <text x="508" y="306" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">= rs sin θ</text>
-
-  <!-- Step 3: Conclusion -->
-  <line x1="492" y1="324" x2="683" y2="324" stroke="#313244" stroke-width="1" />
-  <text x="492" y="348" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">3. Geometric Identity:</text>
-
-  <!-- Highlight Result Box -->
-  <rect x="487" y="360" width="201" height="85" rx="6" fill="#313244" stroke="#a6e3a1" stroke-width="1.5" />
-  <text x="498" y="384" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">r × s = (rs sin θ) ẑ</text>
-  <text x="498" y="406" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">• Direction: ẑ ⊥ r and ẑ ⊥ s</text>
-  <text x="498" y="424" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">• Magnitude: |r × s| = rs sin θ</text>
-  <text x="498" y="438" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">• Obeys right-hand rule</text>
-
-  <!-- Bottom Buffer Note -->
-  <text x="492" y="472" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Frame-independent equivalence</text>
+  <!-- Vector Result Box -->
+  <rect x="487" y="206" width="201" height="85" rx="6" fill="#313244" stroke="#a6e3a1" stroke-width="1.2" />
+  <text x="498" y="230" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">r × s = (rs sin θ) ẑ</text>
+  <text x="498" y="252" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">• Orthogonal: ẑ ⊥ r and ẑ ⊥ s</text>
+  <text x="498" y="270" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">• Right-hand orientation</text>
 </svg>

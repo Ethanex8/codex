@@ -61,37 +61,21 @@
     <text x="14" y="40" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Triangle flattens into line segment ⟹ |a + b| = a + b</text>
   </g>
 
-  <!-- RIGHT SIDE: Info / Derivation Card ($x \ge 475$) -->
-  <rect x="475" y="30" width="225" height="460" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  <!-- RIGHT SIDE: Compact Geometric Legend Card ($x \ge 475$) -->
+  <rect x="475" y="70" width="225" height="235" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
 
   <!-- Card Title -->
-  <text x="492" y="62" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Triangle Inequality</text>
-  <line x1="492" y1="74" x2="683" y2="74" stroke="#45475a" stroke-width="1" />
+  <text x="492" y="100" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Triangle Inequality</text>
+  <line x1="492" y1="112" x2="683" y2="112" stroke="#45475a" stroke-width="1" />
 
-  <!-- Section 1: Magnitude Square -->
-  <text x="492" y="98" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">1. Vector Magnitude Squared:</text>
-  <text x="492" y="120" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">|a + b|² = (a + b) · (a + b)</text>
-  <text x="492" y="140" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">= a² + b² + 2(a · b)</text>
-  <text x="492" y="160" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">= a² + b² + 2ab cos θ</text>
+  <!-- Geometric Elements -->
+  <text x="492" y="138" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Triangle Side Lengths:</text>
+  <text x="492" y="162" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Side 1: |a| = a</text>
+  <text x="492" y="186" fill="#f38ba8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Side 2: |b| = b</text>
+  <text x="492" y="210" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Resultant: |a + b|</text>
 
-  <!-- Section 2: Algebraic Sum Square -->
-  <line x1="492" y1="180" x2="683" y2="180" stroke="#313244" stroke-width="1" />
-  <text x="492" y="204" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">2. Sum of Magnitudes:</text>
-  <text x="492" y="226" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">(a + b)² = a² + b² + 2ab</text>
-
-  <!-- Section 3: Comparison -->
-  <line x1="492" y1="246" x2="683" y2="246" stroke="#313244" stroke-width="1" />
-  <text x="492" y="270" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">3. Comparison &amp; Bound:</text>
-  <text x="492" y="292" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Since cos θ ≤ 1 for all θ:</text>
-  <text x="492" y="312" fill="#f38ba8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">2ab cos θ ≤ 2ab</text>
-  <text x="492" y="334" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">⟹ |a + b|² ≤ (a + b)²</text>
-
-  <!-- Highlight Result Box -->
-  <rect x="487" y="352" width="201" height="80" rx="6" fill="#313244" stroke="#a6e3a1" stroke-width="1.5" />
-  <text x="500" y="376" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Taking Square Roots:</text>
-  <text x="500" y="400" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">|a + b| ≤ a + b</text>
-  <text x="500" y="418" fill="#89b4fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Shortest distance: straight line</text>
-
-  <!-- Bottom Buffer Note -->
-  <text x="492" y="468" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Geometric: Euclidean 3rd side bound</text>
+  <!-- Metric Bound Box -->
+  <rect x="487" y="228" width="201" height="65" rx="6" fill="#313244" stroke="#a6e3a1" stroke-width="1.2" />
+  <text x="498" y="252" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Euclidean Metric Bound:</text>
+  <text x="498" y="274" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">|a + b| ≤ a + b</text>
 </svg>
