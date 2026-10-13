@@ -7,6 +7,7 @@
 - **User-Led Strategy First**: Present the clean problem prompt and given parameters. Then wait for the user to provide their physical intuition, coordinate choice, and strategy.
 - **Guiding Principle**: Do not lecture or solve ahead of the user. Only interject or nudge if the user's stated approach contains an error, misconception, or sign trap.
 - **Strictly Targeted Solutions**: Keep authored solutions strictly focused on what the exercise asks for. Do not include unrequested remarks, checks, or tangent verification sections.
+- **Minimal Sufficiency in Derivations**: Prioritize the most direct and elegant path. When closure, symmetry, or coordinate invariance relations are available, link the geometric quantity to a single component or vector product and let algebraic relations establish the remaining equalities, rather than computing redundant geometric projections or auxiliary expressions.
 - **Pedagogical Scope Alignment**: Align authored explanations and diagram notes strictly with concepts and techniques introduced up to the active section of the textbook. Never invoke future concepts (e.g., forces, potential energy, harmonic oscillators) before they are formally introduced in the text.
 - **Mobile-Friendly Review**: Always format and print the full mathematical solution directly into the chat response so the user can review and verify on mobile without relying on a localhost browser server.
 - **Approval Gate & Remote Sync**: Wait for explicit user confirmation before staging and committing. Once committed, push to `origin main` so GitHub Pages deploys the update, then automatically fetch and present the next problem in sequence.
@@ -41,6 +42,7 @@
 
 ## 4. Math & Markdown Formatting Invariants
 - **Display Math Padding**: Every display math block (`$$...$$`) must have an empty line before and after it. Failing to pad display math causes `pymdownx.arithmatex` to treat it as inline text inside a `<p>` tag, which breaks MathJax browser rendering.
+- **No Display Math in Lists**: Never place display math blocks (`$$...$$`) inside ordered (`1.`) or unordered (`-`) list items. Even with blank line padding, markdown list parsers treat nested display blocks as indented paragraph continuations, which frequently breaks mobile MathJax/KaTeX rendering. Use standalone paragraphs or subheadings (`###`, `####`, `#####`) for multi-step derivations instead.
 
 ## 5. Custom Diagrams & Figures Standard
 - **Directory Layout**: All problem diagrams reside in a `figures/` subfolder alongside the solution file (e.g., `ch01/figures/fig_01_03.svg`).
