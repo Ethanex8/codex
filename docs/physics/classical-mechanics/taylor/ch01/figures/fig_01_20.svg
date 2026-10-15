@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520">
+  <!-- Solid Background Invariant -->
+  <rect width="720" height="520" fill="#1e1e2e" />
+
+  <defs>
+    <!-- Vector Arrowheads -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#89b4fa" />
+    </marker>
+    <marker id="arrow-peach" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fab387" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f38ba8" />
+    </marker>
+    <marker id="arrow-yellow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f9e2af" />
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#9399b2" />
+    </marker>
+  </defs>
+
+  <!-- ================= LEFT REGION: GEOMETRIC SETUP ================= -->
+
+  <!-- Coordinate Axes from Origin O(120, 420) -->
+  <line x1="80" y1="420" x2="390" y2="420" stroke="#9399b2" stroke-width="1.5" marker-end="url(#arrow-muted)" />
+  <text x="405" y="424" fill="#9399b2" font-family="'Fira Code', monospace" font-size="13" text-anchor="start">x</text>
+
+  <line x1="120" y1="450" x2="120" y2="60" stroke="#9399b2" stroke-width="1.5" marker-end="url(#arrow-muted)" />
+  <text x="120" y="48" fill="#9399b2" font-family="'Fira Code', monospace" font-size="13" text-anchor="middle">y</text>
+
+  <!-- Origin Marker & Label -->
+  <circle cx="120" cy="420" r="3.5" fill="#cdd6f4" />
+  <text x="104" y="438" fill="#9399b2" font-family="'Fira Code', monospace" font-size="13" text-anchor="end">O</text>
+
+  <!-- Triangle Shaded Interior: A(220, 100), B(380, 270), C(70, 260) -->
+  <polygon points="220,100 380,270 70,260" fill="#89b4fa" fill-opacity="0.10" stroke="#6c7086" stroke-width="1" stroke-dasharray="4,4" />
+
+  <!-- Triangle Closing Side AC -->
+  <line x1="70" y1="260" x2="220" y2="100" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="3,3" />
+
+  <!-- Position Vector A: O(120, 420) -> A(220, 100) -->
+  <line x1="120" y1="420" x2="218" y2="106" stroke="#89b4fa" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <text x="148" y="325" fill="#89b4fa" font-family="'Fira Code', monospace" font-size="14" font-weight="bold" text-anchor="end">A</text>
+
+  <!-- Position Vector B: O(120, 420) -> B(380, 270) -->
+  <line x1="120" y1="420" x2="376" y2="272" stroke="#fab387" stroke-width="2" marker-end="url(#arrow-peach)" />
+  <text x="275" y="375" fill="#fab387" font-family="'Fira Code', monospace" font-size="14" font-weight="bold" text-anchor="start">B</text>
+
+  <!-- Position Vector C: O(120, 420) -> C(70, 260) -->
+  <line x1="120" y1="420" x2="72" y2="265" stroke="#a6e3a1" stroke-width="2" marker-end="url(#arrow-green)" />
+  <text x="75" y="360" fill="#a6e3a1" font-family="'Fira Code', monospace" font-size="14" font-weight="bold" text-anchor="end">C</text>
+
+  <!-- Triangle Edge Vector: B -> A: (A - B) -->
+  <line x1="380" y1="270" x2="224" y2="104" stroke="#f38ba8" stroke-width="2.5" marker-end="url(#arrow-red)" />
+  <text x="325" y="172" fill="#f38ba8" font-family="'Fira Code', monospace" font-size="13" font-weight="bold" text-anchor="start">A − B</text>
+
+  <!-- Triangle Edge Vector: C -> B: (B - C) -->
+  <line x1="70" y1="260" x2="374" y2="270" stroke="#f9e2af" stroke-width="2.5" marker-end="url(#arrow-yellow)" />
+  <text x="225" y="295" fill="#f9e2af" font-family="'Fira Code', monospace" font-size="13" font-weight="bold" text-anchor="middle">B − C</text>
+
+  <!-- Triangle Vertices Points & Labels -->
+  <circle cx="220" cy="100" r="4.5" fill="#89b4fa" />
+  <text x="220" y="82" fill="#cdd6f4" font-family="'Fira Code', monospace" font-size="14" font-weight="bold" text-anchor="middle">A</text>
+
+  <circle cx="380" cy="270" r="4.5" fill="#fab387" />
+  <text x="398" y="275" fill="#cdd6f4" font-family="'Fira Code', monospace" font-size="14" font-weight="bold" text-anchor="start">B</text>
+
+  <circle cx="70" cy="260" r="4.5" fill="#a6e3a1" />
+  <text x="52" y="265" fill="#cdd6f4" font-family="'Fira Code', monospace" font-size="14" font-weight="bold" text-anchor="end">C</text>
+
+  <!-- ================= RIGHT REGION: DERIVATION CARD ================= -->
+  <g transform="translate(480, 35)">
+    <!-- Card Frame -->
+    <rect width="215" height="445" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+
+    <!-- Card Header -->
+    <rect width="215" height="38" rx="8" fill="#313244" />
+    <text x="107.5" y="24" fill="#cdd6f4" font-family="'Fira Code', monospace" font-size="12" font-weight="bold" text-anchor="middle">TRIANGLE AREA</text>
+
+    <!-- Section 1: Vertex Position Vectors -->
+    <text x="16" y="62" fill="#fab387" font-family="'Fira Code', monospace" font-size="11" font-weight="bold">Position Vectors</text>
+    <text x="20" y="82" fill="#a6adc8" font-family="'Fira Code', monospace" font-size="11">Origin: O = (0, 0, 0)</text>
+    <text x="20" y="100" fill="#89b4fa" font-family="'Fira Code', monospace" font-size="11">A = vertex 1</text>
+    <text x="20" y="118" fill="#fab387" font-family="'Fira Code', monospace" font-size="11">B = vertex 2</text>
+    <text x="20" y="136" fill="#a6e3a1" font-family="'Fira Code', monospace" font-size="11">C = vertex 3</text>
+
+    <!-- Section 2: Directed Edge Vectors -->
+    <line x1="16" y1="150" x2="199" y2="150" stroke="#313244" stroke-width="1" />
+    <text x="16" y="172" fill="#fab387" font-family="'Fira Code', monospace" font-size="11" font-weight="bold">Edge Vectors (at B)</text>
+    <text x="20" y="192" fill="#f38ba8" font-family="'Fira Code', monospace" font-size="11">u = A − B  (B → A)</text>
+    <text x="20" y="210" fill="#f9e2af" font-family="'Fira Code', monospace" font-size="11">v = B − C  (C → B)</text>
+
+    <!-- Section 3: Cross Product Expansion -->
+    <line x1="16" y1="225" x2="199" y2="225" stroke="#313244" stroke-width="1" />
+    <text x="16" y="247" fill="#fab387" font-family="'Fira Code', monospace" font-size="11" font-weight="bold">Cross Product u × v</text>
+    <text x="20" y="267" fill="#cdd6f4" font-family="'Fira Code', monospace" font-size="10.5">(A − B) × (B − C)</text>
+    <text x="20" y="285" fill="#a6adc8" font-family="'Fira Code', monospace" font-size="10.5">= A×B − A×C − B×B + B×C</text>
+    <text x="20" y="305" fill="#a6adc8" font-family="'Fira Code', monospace" font-size="10.5">Note: B × B = 0</text>
+    <text x="20" y="323" fill="#a6adc8" font-family="'Fira Code', monospace" font-size="10.5">      −A × C = C × A</text>
+
+    <!-- Section 4: Result Box -->
+    <rect x="12" y="348" width="191" height="68" rx="6" fill="#1e1e2e" stroke="#89b4fa" stroke-width="1.5" />
+    <text x="107.5" y="372" fill="#cdd6f4" font-family="'Fira Code', monospace" font-size="11" font-weight="bold" text-anchor="middle">Area = ½ |u × v|</text>
+    <text x="107.5" y="398" fill="#89b4fa" font-family="'Fira Code', monospace" font-size="11" font-weight="bold" text-anchor="middle">½ |B×C + C×A + A×B|</text>
+  </g>
+</svg>
