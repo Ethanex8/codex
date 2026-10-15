@@ -49,8 +49,7 @@
 - **Visual Style Tokens**:
   - **Theme**: Catppuccin Mocha. Background: `#1e1e2e`, Main Text: `#cdd6f4`, Muted / Axes: `#9399b2`, Box Edges: `#6c7086`.
   - **Accent Colors**: Blue (`#89b4fa`), Red (`#f38ba8`), Orange (`#fab387`), Green (`#a6e3a1`).
-  - **Canvas & Font**: `viewBox="0 0 720 520"`, strictly system sans-serif font family (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`), minimum 12px font size.
-  - **Typography & Encoding**: Standalone SVGs are parsed strictly as XML. Never use HTML named entity references (e.g., `&theta;`, `&minus;`, `&omega;`, `&bull;`), which are undefined in XML and break SVG rendering. Strictly use standard ASCII / basic Latin characters for math variables (e.g., `r(t)`, `v(t)`, `a(t)`, `x̂`, `ŷ`), standard UTF-8 characters or numeric XML character references (e.g., `&#x3B8;`, `&#8722;`) for Greek letters and operators (`θ`, `ω`, `π`, `Δ`, `−`, `²`, `·`, `•`, `°`), and only the 5 standard XML predefined entities (`&amp;`, `&lt;`, `&gt;`, `&quot;`, `&apos;`). Never introduce secondary serif/math fonts (e.g., "Cambria Math") or Plane 1 Mathematical Alphanumeric Unicode code points (`U+1D400`–`U+1D7FF`), which fail to render across mobile and cross-platform SVG viewers.
+  - **Canvas**: `viewBox="0 0 720 520"`.
 - **Dual-Track Workflow**:
   - **Track A (Geometric / Conceptual)**: Author clean, standalone Native SVGs (`fig_XX_YY.svg`) directly without Python scripts.
   - **Track B (Computational / Analytical)**: Author paired Python scripts (`fig_XX_YY.py`) following `docs/templates/diagram-template.py` to generate `fig_XX_YY.svg`. Commit both.
@@ -60,7 +59,3 @@
   - **Vector & Annotation Clearance**: In 2D and 3D projections, select particle evaluation points $P(t)$ that maximize screen angular separation between $\mathbf{v}$, $\mathbf{a}$, and $\mathbf{r}$ ($\ge 45^\circ$). Place dimensional indicators (e.g., pitch, semi-axes, radii) in clear background zones away from vector rays and coordinate axes.
   - **Stacked Layout for Complex Setups**: When vector configurations require wide horizontal spans or lengthy component derivations, use a vertical split: vector geometry in the upper zone ($y \in [40, 290]$) and a full-width derivation card across the bottom ($y \in [320, 500]$).
 - **In-Chat Preview**: Render diagram previews in chat responses using an HTML artifact in the conversation artifact directory wrapping the SVG markup inside an `<agent-embed src="file:///<path>/fig_XX_YY_preview.html"></agent-embed>` block. Never re-read external skill docs or templates to construct this.
-
-## 6. Workspace Tooling & Permissions
-- **Project Permissions**: Project-specific tool permissions belong in `~/.gemini/config/projects/<project-id>.json`, never in global permission configs.
-
