@@ -31,6 +31,7 @@
       - **Textbook**: *[Book Title]* ([Author])
       - **Chapter**: X — [Chapter Title]
       - **Problem**: X.Y
+      - **Difficulty**: [$\star$, $\star\star$, or $\star\star\star$]
       - **Topic**: [Topic tags]
   ```
 - **Diagram Prerequisite**: Purely algebraic or component evaluations do NOT have a diagram or figures section. Only create diagrams (`figures/fig_<CC>_<PP>.svg`) when the problem involves geometric configurations, trajectories, or visual setups. Never inspect previous problem files to check for figure precedent.
