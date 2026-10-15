@@ -35,13 +35,12 @@
   <!-- Right Angle Indicator at (316.5, 380) -->
   <path d="M 296.5 380 L 296.5 360 L 316.5 360" fill="none" stroke="#6c7086" stroke-width="1.5" />
 
-  <!-- Projection Dashed Lines -->
-  <line x1="316.5" y1="130" x2="316.5" y2="380" stroke="#f38ba8" stroke-width="2" stroke-dasharray="5 5" />
+  <!-- Projection Dashed Line (horizontal to y-axis) -->
   <line x1="100" y1="130" x2="316.5" y2="130" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="4 4" />
 
-  <!-- Angle Theta Arc (radius 60) -->
-  <path d="M 160 380 A 60 60 0 0 0 139.3 334.6" fill="none" stroke="#fab387" stroke-width="2" />
-  <text x="172" y="358" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600">θ</text>
+  <!-- Angle Theta Arc (radius 65) -->
+  <path d="M 165 380 A 65 65 0 0 0 142.5 330.8" fill="none" stroke="#fab387" stroke-width="2" />
+  <text x="178" y="355" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600">θ</text>
 
   <!-- Parallel Component Vector b_parallel along x-axis -->
   <line x1="100" y1="380" x2="316.5" y2="380" stroke="#89b4fa" stroke-width="3.5" marker-end="url(#arrow-blue)" />
@@ -53,13 +52,13 @@
   <text x="328" y="278" fill="#f38ba8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">(= b_⊥)</text>
 
   <!-- Unit vector u on the axis -->
-  <line x1="100" y1="380" x2="200" y2="380" stroke="#a6e3a1" stroke-width="4" marker-end="url(#arrow-green)" />
-  <text x="150" y="368" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" text-anchor="middle">û (|û| = 1)</text>
+  <line x1="100" y1="380" x2="180" y2="380" stroke="#a6e3a1" stroke-width="3.5" marker-end="url(#arrow-green)" />
+  <text x="135" y="368" fill="#a6e3a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">û</text>
 
   <!-- Vector b (Hypotenuse) -->
   <line x1="100" y1="380" x2="316.5" y2="130" stroke="#fab387" stroke-width="3.5" marker-end="url(#arrow-orange)" />
-  <text x="180" y="240" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700">b</text>
-  <text x="175" y="258" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">(magnitude b)</text>
+  <text x="195" y="235" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" text-anchor="end">b</text>
+  <text x="195" y="254" fill="#fab387" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" text-anchor="end">(magnitude b)</text>
 
   <!-- Cross product direction badge -->
   <g transform="translate(100, 455)">

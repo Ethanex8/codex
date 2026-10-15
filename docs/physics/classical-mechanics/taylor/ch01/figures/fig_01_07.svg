@@ -42,14 +42,14 @@
 
   <!-- Shaded projection interval along x-axis: [120, 314] -->
   <rect x="120" y="244" width="194" height="12" fill="#a6e3a1" fill-opacity="0.25" />
-  <text x="217" y="275" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="middle">s<tspan dy="3" font-size="11">x</tspan><tspan dy="-3"> = s cos θ</tspan></text>
+  <text x="217" y="275" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="middle">sₓ = s cos θ</text>
 
   <!-- Projection label along y-axis -->
-  <text x="105" y="104" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="end">s<tspan dy="3" font-size="11">y</tspan><tspan dy="-3"> = s sin θ</tspan></text>
+  <text x="105" y="104" fill="#a6e3a1" font-size="14" font-weight="bold" text-anchor="end">sᵧ = s sin θ</text>
 
   <!-- Vector r along x-axis: from (120, 240) to (500, 240) with extra stroke thickness -->
   <line x1="120" y1="240" x2="492" y2="240" stroke="#89b4fa" stroke-width="4.5" marker-end="url(#arrow-r)" />
-  <text x="515" y="234" fill="#89b4fa" font-size="16" font-weight="bold">r = (r, 0, 0)</text>
+  <text x="420" y="228" fill="#89b4fa" font-size="15" font-weight="bold" text-anchor="middle">r = (r, 0, 0)</text>
 
   <!-- Vector s at angle θ: from (120, 240) to (314, 99) -->
   <line x1="120" y1="240" x2="308" y2="104" stroke="#fab387" stroke-width="3.5" marker-end="url(#arrow-s)" />

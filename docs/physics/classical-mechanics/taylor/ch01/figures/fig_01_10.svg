@@ -53,21 +53,21 @@
 
     <!-- Position vector r(t): from (180, 310) to P(266.8, 206.6) -->
     <line x1="180" y1="310" x2="262" y2="212" stroke="#89b4fa" stroke-width="3" marker-end="url(#arrow-blue)" />
-    <text x="210" y="250" fill="#89b4fa" font-size="15px" font-weight="bold">r(t)</text>
+    <text x="208" y="250" fill="#89b4fa" font-size="15px" font-weight="bold" text-anchor="middle">r(t)</text>
 
     <!-- Projection lines for components of r -->
     <line x1="266.8" y1="206.6" x2="266.8" y2="310" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
     <line x1="266.8" y1="206.6" x2="180" y2="206.6" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
-    <text x="238" y="325" fill="#89b4fa" font-size="12px">R cos(ωt)</text>
-    <text x="105" y="211" fill="#89b4fa" font-size="12px">R sin(ωt)</text>
+    <text x="225" y="328" fill="#89b4fa" font-size="12px" text-anchor="middle">R cos(ωt)</text>
+    <text x="172" y="200" fill="#89b4fa" font-size="12px" text-anchor="end">R sin(ωt)</text>
 
     <!-- Velocity vector v(t): Tangential, angle 140 deg -->
     <line x1="266.8" y1="206.6" x2="210" y2="159" stroke="#a6e3a1" stroke-width="3" marker-end="url(#arrow-green)" />
     <text x="236" y="165" fill="#a6e3a1" font-size="15px" font-weight="bold">v(t)</text>
 
-    <!-- Acceleration vector a(t): Centripetal, pointing back to O -->
-    <line x1="266.8" y1="206.6" x2="220" y2="262" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)" />
-    <text x="252" y="260" fill="#f38ba8" font-size="15px" font-weight="bold">a(t)</text>
+    <!-- Acceleration vector a(t): Centripetal, pointing back toward O (slightly offset laterally) -->
+    <line x1="269.5" y1="208.8" x2="223" y2="264" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)" />
+    <text x="278" y="255" fill="#f38ba8" font-size="15px" font-weight="bold" text-anchor="start">a(t)</text>
 
     <!-- Particle dot at P -->
     <circle cx="266.8" cy="206.6" r="5" fill="#cdd6f4" stroke="#11111b" stroke-width="1.5" />

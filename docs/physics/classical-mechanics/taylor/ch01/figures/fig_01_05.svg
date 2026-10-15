@@ -69,18 +69,18 @@
 
   <!-- Vector: Face Diagonal d_face from O(220, 360) to XY(350, 437) -->
   <line x1="220" y1="360" x2="345" y2="434" stroke="#89b4fa" stroke-width="3.5" marker-end="url(#arrow-face)" />
-  <text x="290" y="425" fill="#89b4fa" font-size="16" font-weight="bold">d<tspan dy="3" font-size="12">face</tspan><tspan dy="-3"> = (1, 1, 0)</tspan></text>
+  <text x="190" y="420" fill="#89b4fa" font-size="15" font-weight="bold">d_face = (1, 1, 0)</text>
 
   <!-- Vector: Body Diagonal d_body from O(220, 360) to XYZ(350, 197) -->
   <line x1="220" y1="360" x2="347" y2="202" stroke="#f38ba8" stroke-width="3.5" marker-end="url(#arrow-body)" />
-  <text x="210" y="260" fill="#f38ba8" font-size="16" font-weight="bold">d<tspan dy="3" font-size="12">body</tspan><tspan dy="-3"> = (1, 1, 1)</tspan></text>
+  <text x="195" y="235" fill="#f38ba8" font-size="15" font-weight="bold">d_body = (1, 1, 1)</text>
 
   <!-- Vertical Leg label: z-edge -->
   <text x="365" y="320" fill="#a6e3a1" font-size="15" font-weight="bold">Δz = 1</text>
 
   <!-- Angle arc θ at Origin between d_face and d_body -->
-  <path d="M 252 340 A 40 40 0 0 1 254 380" fill="none" stroke="#fab387" stroke-width="2.2" />
-  <text x="268" y="365" fill="#fab387" font-size="18" font-weight="bold">θ</text>
+  <path d="M 250 323 A 48 48 0 0 1 261 384" fill="none" stroke="#fab387" stroke-width="2.2" />
+  <text x="274" y="340" fill="#fab387" font-size="18" font-weight="bold">θ</text>
 
   <!-- Vertex Markers & Coordinates -->
   <circle cx="220" cy="360" r="4.5" fill="#cdd6f4" />

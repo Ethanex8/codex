@@ -42,8 +42,8 @@
 
     <!-- Intercept markers and labels -->
     <text x="318" y="328" fill="#89b4fa" font-size="12px">b</text>
-    <text x="38" y="328" fill="#89b4fa" font-size="12px">−b</text>
-    <text x="186" y="215" fill="#a6e3a1" font-size="12px">c</text>
+    <text x="45" y="296" fill="#89b4fa" font-size="12px" text-anchor="middle">−b</text>
+    <text x="190" y="215" fill="#a6e3a1" font-size="12px">c</text>
     <text x="186" y="415" fill="#a6e3a1" font-size="12px">−c</text>
 
     <!-- Counterclockwise direction arrow along ellipse -->
@@ -57,21 +57,21 @@
     <!-- Particle P at phase angle phi = 45 deg (t = pi / 4omega) -->
     <!-- Position vector r(t): from (180, 310) to P(275.5, 246.4) -->
     <line x1="180" y1="310" x2="270" y2="250" stroke="#89b4fa" stroke-width="3" marker-end="url(#arrow-blue)" />
-    <text x="215" y="270" fill="#89b4fa" font-size="15px" font-weight="bold">r(t)</text>
+    <text x="215" y="265" fill="#89b4fa" font-size="15px" font-weight="bold" text-anchor="middle">r(t)</text>
 
     <!-- Component projection lines -->
     <line x1="275.5" y1="246.4" x2="275.5" y2="310" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
     <line x1="275.5" y1="246.4" x2="180" y2="246.4" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
-    <text x="248" y="325" fill="#89b4fa" font-size="12px">b cos(ωt)</text>
-    <text x="105" y="250" fill="#a6e3a1" font-size="12px">c sin(ωt)</text>
+    <text x="235" y="328" fill="#89b4fa" font-size="12px" text-anchor="middle">b cos(ωt)</text>
+    <text x="172" y="240" fill="#a6e3a1" font-size="12px" text-anchor="end">c sin(ωt)</text>
 
     <!-- Velocity vector v(t) -->
     <line x1="275.5" y1="246.4" x2="220" y2="210" stroke="#a6e3a1" stroke-width="3" marker-end="url(#arrow-green)" />
     <text x="246" y="215" fill="#a6e3a1" font-size="15px" font-weight="bold">v(t)</text>
 
-    <!-- Acceleration vector a(t): inward toward origin O -->
-    <line x1="275.5" y1="246.4" x2="224" y2="280" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)" />
-    <text x="256" y="285" fill="#f38ba8" font-size="15px" font-weight="bold">a(t)</text>
+    <!-- Acceleration vector a(t): inward toward origin O (slightly offset laterally) -->
+    <line x1="277.4" y1="249.3" x2="226" y2="283" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)" />
+    <text x="285" y="280" fill="#f38ba8" font-size="15px" font-weight="bold" text-anchor="start">a(t)</text>
 
     <!-- Particle dot at P -->
     <circle cx="275.5" cy="246.4" r="5" fill="#cdd6f4" stroke="#11111b" stroke-width="1.5" />

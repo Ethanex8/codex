@@ -35,11 +35,11 @@
 
     <!-- Angle theta (interior at B) -->
     <path d="M 250 390 A 40 40 0 0 1 274.6 353.1" fill="#f38ba8" fill-opacity="0.18" stroke="#f38ba8" stroke-width="1.8" />
-    <text x="256" y="375" fill="#f38ba8" font-size="14px" font-style="italic">θ</text>
+    <text x="270" y="380" fill="#f38ba8" font-size="14px" font-style="italic" text-anchor="middle">θ</text>
 
     <!-- Angle (180 - theta) (exterior between +a extension and b) -->
     <path d="M 335 390 A 45 45 0 0 0 272.7 348.9" fill="#fab387" fill-opacity="0.15" stroke="#fab387" stroke-width="1.8" />
-    <text x="310" y="362" fill="#fab387" font-size="14px" font-style="italic">180° − θ</text>
+    <text x="345" y="375" fill="#fab387" font-size="14px" font-style="italic">180° − θ</text>
 
     <!-- Vector a: from (70, 390) to (290, 390) -->
     <line x1="70" y1="390" x2="284" y2="390" stroke="#89b4fa" stroke-width="3.5" marker-end="url(#arrow-blue)" />
@@ -51,7 +51,7 @@
     <!-- Vector Labels -->
     <text x="175" y="416" fill="#89b4fa" font-size="16px" font-weight="bold">a</text>
     <text x="255" y="265" fill="#a6e3a1" font-size="16px" font-weight="bold">b</text>
-    <text x="110" y="265" fill="#fab387" font-size="16px" font-weight="bold">c = a + b</text>
+    <text x="110" y="270" fill="#fab387" font-size="15px" font-weight="bold" text-anchor="end">c = a + b</text>
 
     <!-- Vertex Points -->
     <circle cx="70" cy="390" r="4.5" fill="#cdd6f4" />

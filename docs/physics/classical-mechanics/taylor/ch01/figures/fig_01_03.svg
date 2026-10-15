@@ -48,14 +48,14 @@
 
   <!-- Leg x: along x-axis from O(230, 370) to (150, 428) -->
   <line x1="230" y1="370" x2="150" y2="428" stroke="#89b4fa" stroke-width="2.5" />
-  <text x="175" y="415" fill="#89b4fa" font-size="16" font-weight="bold">x</text>
+  <text x="175" y="395" fill="#89b4fa" font-size="16" font-weight="bold">x</text>
 
   <!-- Leg y: parallel to y-axis from (150, 428) to Q(410, 428) -->
   <line x1="150" y1="428" x2="410" y2="428" stroke="#89b4fa" stroke-width="2.5" />
   <text x="280" y="450" fill="#89b4fa" font-size="16" font-weight="bold">y</text>
 
   <!-- Right angle marker at (150, 428) in xy plane -->
-  <path d="M 162 419 L 174 428 L 162 437" fill="none" stroke="#89b4fa" stroke-width="1.5" />
+  <path d="M 161 420 L 175 420 L 164 428" fill="none" stroke="#89b4fa" stroke-width="1.5" />
 
   <!-- Hypotenuse 1 (rho) in xy plane: from O(230, 370) to Q(410, 428) -->
   <line x1="230" y1="370" x2="410" y2="428" stroke="#fab387" stroke-width="3" />
