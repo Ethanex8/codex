@@ -47,9 +47,9 @@
 ## 5. Custom Diagrams & Figures Standard
 - **Directory Layout**: All problem diagrams reside in a `figures/` subfolder alongside the solution file (e.g., `ch01/figures/fig_01_03.svg`).
 - **Visual Style Tokens**:
-  - **Theme**: Catppuccin Mocha. Background: `#1e1e2e`, Main Text: `#cdd6f4`, Muted / Axes: `#9399b2`, Box Edges: `#6c7086`.
+  - **Theme**: Catppuccin Mocha. Background: `#1e1e2e`, Main Text: `#cdd6f4`, Muted / Axes: `#9399b2`, Box Edges: `#6c7086`. Card headers/surfaces use Mantle (`#181825`) or Surface0 (`#313244`). Never use off-palette hex codes.
   - **Accent Colors**: Blue (`#89b4fa`), Red (`#f38ba8`), Orange (`#fab387`), Green (`#a6e3a1`).
-  - **Canvas**: `viewBox="0 0 720 520"`.
+  - **Canvas & Background**: `viewBox="0 0 720 520"`, `width="720" height="520"`. The first child of `<svg>` must always be an explicit solid background rectangle: `<rect width="720" height="520" fill="#1e1e2e" />` to guarantee solid rendering across all external renderers and themes.
 - **Dual-Track Workflow**:
   - **Track A (Geometric / Conceptual)**: Author clean, standalone Native SVGs (`fig_XX_YY.svg`) directly without Python scripts.
   - **Track B (Computational / Analytical)**: Author paired Python scripts (`fig_XX_YY.py`) following `docs/templates/diagram-template.py` to generate `fig_XX_YY.svg`. Commit both.
@@ -58,4 +58,5 @@
   - **Card Vertical Budget**: Size card heights, line spacing, and font sizes so the bottom-most element or highlight box maintains at least a 20px buffer from the card bottom edge, keeping the overall card bottom bound $\le 505\text{px}$ within the 520px canvas.
   - **Vector & Annotation Clearance**: In 2D and 3D projections, select particle evaluation points $P(t)$ that maximize screen angular separation between $\mathbf{v}$, $\mathbf{a}$, and $\mathbf{r}$ ($\ge 45^\circ$). Place dimensional indicators (e.g., pitch, semi-axes, radii) in clear background zones away from vector rays and coordinate axes.
   - **Stacked Layout for Complex Setups**: When vector configurations require wide horizontal spans or lengthy component derivations, use a vertical split: vector geometry in the upper zone ($y \in [40, 290]$) and a full-width derivation card across the bottom ($y \in [320, 500]$).
+- **Automated Diagram Verification**: Whenever creating or modifying diagrams, verify compliance locally using `python scripts/audit_diagrams.py` (or `python scripts/audit_diagrams.py --chapter X`).
 - **In-Chat Preview**: Render diagram previews in chat responses using an HTML artifact in the conversation artifact directory wrapping the SVG markup inside an `<agent-embed src="file:///<path>/fig_XX_YY_preview.html"></agent-embed>` block. Never re-read external skill docs or templates to construct this.
