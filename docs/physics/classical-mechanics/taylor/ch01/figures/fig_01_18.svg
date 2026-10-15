@@ -94,7 +94,7 @@
 
 
   <!-- RIGHT SIDE: Compact Geometric Legend Card ($x \ge 475$) -->
-  <rect x="475" y="70" width="225" height="235" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  <rect x="475" y="70" width="225" height="240" rx="8" fill="#181825" stroke="#6c7086" stroke-width="1.5" />
 
   <!-- Card Title -->
   <text x="492" y="100" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Geometric Triangle Setup</text>

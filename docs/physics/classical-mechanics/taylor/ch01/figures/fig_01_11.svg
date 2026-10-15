@@ -1,11 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#181825" />
-      <stop offset="100%" stop-color="#1e1e2e" />
-    </linearGradient>
-
     <!-- Arrow Markers -->
     <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#89b4fa" />
@@ -24,127 +18,105 @@
     </marker>
   </defs>
 
-  <style>
-    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 700; font-size: 18px; fill: #cdd6f4; }
-    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #a6adc8; }
-    .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 600; font-size: 14px; fill: #89b4fa; }
-    .math-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; fill: #cdd6f4; }
-    .math-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: bold; }
-    .sub-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #bac2de; }
-    .angle-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-style: italic; }
-  </style>
-
   <!-- Deep Mocha Canvas Background -->
-  <rect width="720" height="520" rx="16" fill="url(#bgGrad)" />
-  <rect width="718" height="518" x="1" y="1" rx="15" fill="none" stroke="#313244" stroke-width="1.5" />
+  <rect width="720" height="520" fill="#1e1e2e" />
 
   <!-- Header -->
   <g transform="translate(35, 40)">
-    <text class="title" x="0" y="0">Elliptic Orbit Kinematics</text>
-    <text class="subtitle" x="0" y="20">Harmonic motion in 2D: r(t) = b cos(ωt) x&#770; + c sin(ωt) y&#770;</text>
+    <text x="0" y="0" fill="#cdd6f4" font-size="18px" font-weight="700">Elliptic Orbit Kinematics</text>
+    <text x="0" y="20" fill="#a6adc8" font-size="13px">Harmonic motion in 2D: r(t) = b cos(ωt) x̂ + c sin(ωt) ŷ</text>
   </g>
 
-  <!-- Left: Geometry Area (Origin at (215, 305)) -->
-  <!-- Semi-major rx = 155 (b), semi-minor ry = 100 (c) -->
+  <!-- Left: Geometry Area (Origin at O(180, 310)) -->
+  <!-- Semi-major rx = 135 (b), semi-minor ry = 90 (c) -->
   <g id="geometry">
-    <!-- Axes -->
-    <line x1="35" y1="305" x2="395" y2="305" stroke="#9399b2" stroke-width="1.2" marker-end="url(#arrow-muted)" />
-    <line x1="215" y1="465" x2="215" y2="125" stroke="#9399b2" stroke-width="1.2" marker-end="url(#arrow-muted)" />
-    <text class="sub-label" x="402" y="309">x</text>
-    <text class="sub-label" x="211" y="115">y</text>
-    <text class="sub-label" x="199" y="322">O</text>
+    <!-- Axes (bounded to x <= 350 for >= 35px buffer to card at 475) -->
+    <line x1="35" y1="310" x2="345" y2="310" stroke="#9399b2" stroke-width="1.2" marker-end="url(#arrow-muted)" />
+    <line x1="180" y1="465" x2="180" y2="135" stroke="#9399b2" stroke-width="1.2" marker-end="url(#arrow-muted)" />
+    <text x="352" y="314" fill="#bac2de" font-size="13px">x</text>
+    <text x="176" y="125" fill="#bac2de" font-size="13px">y</text>
+    <text x="165" y="325" fill="#bac2de" font-size="13px">O</text>
 
-    <!-- Ellipse Path: rx = 155, ry = 100 -->
-    <ellipse cx="215" cy="305" rx="155" ry="100" fill="none" stroke="#45475a" stroke-width="1.8" stroke-dasharray="5,5" />
+    <!-- Ellipse Path: rx = 135, ry = 90 -->
+    <ellipse cx="180" cy="310" rx="135" ry="90" fill="none" stroke="#45475a" stroke-width="1.8" stroke-dasharray="5,5" />
 
     <!-- Intercept markers and labels -->
-    <text class="sub-label" x="372" y="325" fill="#89b4fa">b</text>
-    <text class="sub-label" x="45" y="325" fill="#89b4fa">−b</text>
-    <text class="sub-label" x="222" y="202" fill="#a6e3a1">c</text>
-    <text class="sub-label" x="222" y="415" fill="#a6e3a1">−c</text>
+    <text x="318" y="328" fill="#89b4fa" font-size="12px">b</text>
+    <text x="38" y="328" fill="#89b4fa" font-size="12px">−b</text>
+    <text x="186" y="215" fill="#a6e3a1" font-size="12px">c</text>
+    <text x="186" y="415" fill="#a6e3a1" font-size="12px">−c</text>
 
     <!-- Counterclockwise direction arrow along ellipse -->
-    <path d="M 215 205 A 155 100 0 0 0 135 220" fill="none" stroke="#fab387" stroke-width="2" marker-end="url(#arrow-orange)" />
-    <text class="angle-label" x="175" y="195" fill="#fab387">ω</text>
+    <path d="M 180 220 A 135 90 0 0 0 120 230" fill="none" stroke="#fab387" stroke-width="2" marker-end="url(#arrow-orange)" />
+    <text x="145" y="210" fill="#fab387" font-size="14px" font-style="italic">ω</text>
 
     <!-- Position at t = 0 -->
-    <circle cx="370" cy="305" r="3.5" fill="#6c7086" />
-    <text class="sub-label" x="365" y="295" fill="#9399b2">t = 0</text>
+    <circle cx="315" cy="310" r="3.5" fill="#6c7086" />
+    <text x="305" y="298" fill="#9399b2" font-size="12px">t = 0</text>
 
     <!-- Particle P at phase angle phi = 45 deg (t = pi / 4omega) -->
-    <!-- x = 215 + 155 * cos(45) = 215 + 109.6 = 324.6 -->
-    <!-- y = 305 - 100 * sin(45) = 305 - 70.7 = 234.3 -->
-    <!-- Position vector r(t): from (215, 305) to P(324.6, 234.3) -->
-    <line x1="215" y1="305" x2="318" y2="239" stroke="#89b4fa" stroke-width="3" marker-end="url(#arrow-blue)" />
-    <text class="math-label" x="252" y="260" fill="#89b4fa">r(t)</text>
+    <!-- Position vector r(t): from (180, 310) to P(275.5, 246.4) -->
+    <line x1="180" y1="310" x2="270" y2="250" stroke="#89b4fa" stroke-width="3" marker-end="url(#arrow-blue)" />
+    <text x="215" y="270" fill="#89b4fa" font-size="15px" font-weight="bold">r(t)</text>
 
     <!-- Component projection lines -->
-    <line x1="324.6" y1="234.3" x2="324.6" y2="305" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
-    <line x1="324.6" y1="234.3" x2="215" y2="234.3" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
-    <text class="sub-label" x="300" y="322" fill="#89b4fa">b cos(ωt)</text>
-    <text class="sub-label" x="135" y="238" fill="#a6e3a1">c sin(ωt)</text>
+    <line x1="275.5" y1="246.4" x2="275.5" y2="310" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
+    <line x1="275.5" y1="246.4" x2="180" y2="246.4" stroke="#6c7086" stroke-width="1" stroke-dasharray="3,3" />
+    <text x="248" y="325" fill="#89b4fa" font-size="12px">b cos(ωt)</text>
+    <text x="105" y="250" fill="#a6e3a1" font-size="12px">c sin(ωt)</text>
 
-    <!-- Velocity vector v(t): dx = -b*omega*sin(45) < 0, dy = c*omega*cos(45) > 0 (upward in svg is negative dy) -->
-    <!-- Scaling for visual clarity: dx_vis = -75, dy_vis = -48 -->
-    <!-- From (324.6, 234.3) to (249.6, 186.3) -->
-    <line x1="324.6" y1="234.3" x2="256" y2="190" stroke="#a6e3a1" stroke-width="3" marker-end="url(#arrow-green)" />
-    <text class="math-label" x="285" y="198" fill="#a6e3a1">v(t)</text>
+    <!-- Velocity vector v(t) -->
+    <line x1="275.5" y1="246.4" x2="220" y2="210" stroke="#a6e3a1" stroke-width="3" marker-end="url(#arrow-green)" />
+    <text x="246" y="215" fill="#a6e3a1" font-size="15px" font-weight="bold">v(t)</text>
 
-    <!-- Acceleration vector a(t): a = -omega^2 r(t) -> strictly inward toward origin O -->
-    <!-- Length along radial line: dx = -109.6 * 0.6 = -65.8, dy = 70.7 * 0.6 = 42.4 -->
-    <!-- End at (258.8, 276.7) -->
-    <line x1="324.6" y1="234.3" x2="265" y2="272" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)" />
-    <text class="math-label" x="305" y="275" fill="#f38ba8">a(t)</text>
+    <!-- Acceleration vector a(t): inward toward origin O -->
+    <line x1="275.5" y1="246.4" x2="224" y2="280" stroke="#f38ba8" stroke-width="3" marker-end="url(#arrow-red)" />
+    <text x="256" y="285" fill="#f38ba8" font-size="15px" font-weight="bold">a(t)</text>
 
     <!-- Particle dot at P -->
-    <circle cx="324.6" cy="234.3" r="5.5" fill="#cdd6f4" stroke="#11111b" stroke-width="1.5" />
-    <text class="sub-label" x="334" y="230" fill="#cdd6f4" font-weight="bold">P(t)</text>
+    <circle cx="275.5" cy="246.4" r="5" fill="#cdd6f4" stroke="#11111b" stroke-width="1.5" />
+    <text x="284" y="242" fill="#cdd6f4" font-size="13px" font-weight="bold">P(t)</text>
   </g>
 
-  <!-- Right Side Card Panel (x = 435 to 695, w = 260) -->
-  <g transform="translate(435, 75)">
-    <rect width="260" height="425" rx="12" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5" />
+  <!-- Right Side Card Panel ($x \ge 475$, width 225) -->
+  <g transform="translate(475, 75)">
+    <rect width="225" height="420" rx="8" fill="#181825" stroke="#6c7086" stroke-width="1.5" />
 
     <!-- Card Header -->
-    <rect width="260" height="38" rx="12" fill="#252538" />
-    <rect width="260" height="15" y="23" fill="#252538" />
-    <line x1="0" y1="38" x2="260" y2="38" stroke="#45475a" stroke-width="1" />
-    <text class="card-title" x="16" y="24">Orbital Analysis</text>
+    <text x="16" y="30" fill="#89b4fa" font-size="15px" font-weight="700">Orbital Analysis</text>
+    <line x1="16" y1="42" x2="209" y2="42" stroke="#45475a" stroke-width="1" />
 
     <!-- Card Content -->
-    <g transform="translate(16, 54)">
+    <g transform="translate(16, 58)">
       <!-- Step 1: Trajectory Equation -->
-      <text class="sub-label" x="0" y="0">1. Orbit Geometry (Ellipse)</text>
-      <text class="math-text" x="8" y="20" fill="#89b4fa">x/b = cos(ωt),   y/c = sin(ωt)</text>
-      <text class="math-text" x="8" y="40" fill="#89b4fa">(x/b)² + (y/c)² = 1</text>
-      <text class="sub-label" x="8" y="58" fill="#9399b2">• Center: origin (0, 0)</text>
-      <text class="sub-label" x="8" y="74" fill="#9399b2">• Semi-axes: b along x, c along y</text>
+      <text x="0" y="0" fill="#bac2de" font-size="13px" font-weight="600">1. Orbit Geometry (Ellipse)</text>
+      <text x="6" y="18" fill="#89b4fa" font-size="12px">x/b = cos(ωt),  y/c = sin(ωt)</text>
+      <text x="6" y="34" fill="#89b4fa" font-size="12.5px">(x/b)² + (y/c)² = 1</text>
+      <text x="6" y="50" fill="#9399b2" font-size="12px">• Semi-axes: b along x, c along y</text>
 
       <!-- Step 2: Velocity -->
-      <text class="sub-label" x="0" y="104">2. Velocity Vector</text>
-      <text class="math-text" x="8" y="124" fill="#a6e3a1">v(t) = dr/dt</text>
-      <text class="math-text" x="8" y="144" fill="#a6e3a1">v = −ωb sin(ωt) x&#770; + ωc cos(ωt) y&#770;</text>
-      <text class="sub-label" x="8" y="162" fill="#9399b2">• Speed varies throughout orbit</text>
-      <text class="sub-label" x="8" y="178" fill="#9399b2">• Tangent to the ellipse at all t</text>
+      <text x="0" y="76" fill="#bac2de" font-size="13px" font-weight="600">2. Velocity Vector</text>
+      <text x="6" y="94" fill="#a6e3a1" font-size="12px">v(t) = dr/dt</text>
+      <text x="6" y="112" fill="#a6e3a1" font-size="11.5px">v = −ωb sin(ωt) x̂ + ωc cos(ωt) ŷ</text>
+      <text x="6" y="128" fill="#9399b2" font-size="12px">• Tangent to ellipse at all t</text>
 
       <!-- Step 3: Acceleration -->
-      <text class="sub-label" x="0" y="208">3. Acceleration Vector</text>
-      <text class="math-text" x="8" y="228" fill="#f38ba8">a(t) = dv/dt = −ω² r(t)</text>
-      <text class="sub-label" x="8" y="248" fill="#9399b2">• Directed inward toward origin O</text>
-      <text class="sub-label" x="8" y="264" fill="#9399b2">• Proportional to distance |r|</text>
+      <text x="0" y="154" fill="#bac2de" font-size="13px" font-weight="600">3. Acceleration Vector</text>
+      <text x="6" y="172" fill="#f38ba8" font-size="12px">a(t) = dv/dt = −ω² r(t)</text>
+      <text x="6" y="190" fill="#9399b2" font-size="12px">• Directed inward toward origin O</text>
+      <text x="6" y="206" fill="#9399b2" font-size="12px">• Proportional to distance |r|</text>
 
       <!-- Divider -->
-      <line x1="0" y1="276" x2="228" y2="276" stroke="#313244" stroke-width="1.2" />
+      <line x1="0" y1="220" x2="193" y2="220" stroke="#313244" stroke-width="1.2" />
 
       <!-- Step 4: Orbital Properties -->
-      <text class="sub-label" x="0" y="296" fill="#fab387">4. Motion Characteristics</text>
-      <text class="sub-label" x="8" y="316">• Period: T = 2π / ω</text>
-      <text class="sub-label" x="8" y="334">• Sense: Counterclockwise</text>
-      <text class="sub-label" x="8" y="352">• Degeneracy: Circle if b = c</text>
+      <text x="0" y="240" fill="#fab387" font-size="13px" font-weight="600">4. Motion Characteristics</text>
+      <text x="6" y="258" fill="#9399b2" font-size="12px">• Period: T = 2π / ω</text>
+      <text x="6" y="274" fill="#9399b2" font-size="12px">• Degenerates to circle if b = c</text>
 
       <!-- Highlight Box -->
-      <rect x="0" y="362" width="228" height="24" rx="4" fill="#313244" stroke="#fab387" stroke-width="0.8" />
-      <text class="math-text" x="10" y="378" fill="#fab387" font-size="12px">Elliptic Orbit, Period T = 2π/ω</text>
+      <rect x="0" y="288" width="193" height="32" rx="5" fill="#313244" stroke="#fab387" stroke-width="0.8" />
+      <text x="8" y="309" fill="#fab387" font-size="12px" font-weight="600">Elliptic Orbit, Period T = 2π/ω</text>
     </g>
   </g>
 </svg>

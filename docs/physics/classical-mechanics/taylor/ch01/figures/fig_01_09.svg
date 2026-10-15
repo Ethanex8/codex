@@ -1,11 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#181825" />
-      <stop offset="100%" stop-color="#1e1e2e" />
-    </linearGradient>
-
     <!-- Arrow Markers -->
     <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#89b4fa" />
@@ -21,99 +15,85 @@
     </marker>
   </defs>
 
-  <style>
-    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 700; font-size: 18px; fill: #cdd6f4; }
-    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #a6adc8; }
-    .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 600; font-size: 14px; fill: #89b4fa; }
-    .math-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; fill: #cdd6f4; }
-    .math-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: bold; }
-    .sub-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #bac2de; }
-    .angle-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-style: italic; }
-  </style>
-
   <!-- Deep Mocha Canvas Background -->
-  <rect width="720" height="520" rx="16" fill="url(#bgGrad)" />
-  <rect width="718" height="518" x="1" y="1" rx="15" fill="none" stroke="#313244" stroke-width="1.5" />
+  <rect width="720" height="520" fill="#1e1e2e" />
 
   <!-- Header -->
   <g transform="translate(35, 40)">
-    <text class="title" x="0" y="0">Vector Geometry &amp; The Law of Cosines</text>
-    <text class="subtitle" x="0" y="20">Head-to-tail triangle addition: c = a + b with interior angle θ</text>
+    <text x="0" y="0" fill="#cdd6f4" font-size="18px" font-weight="700">Vector Geometry &amp; The Law of Cosines</text>
+    <text x="0" y="20" fill="#a6adc8" font-size="13px">Head-to-tail triangle addition: c = a + b with interior angle θ</text>
   </g>
 
-  <!-- Left: Geometry Visual Area (Origin at (80, 390)) -->
-  <!-- A = (80, 390), B = (310, 390), C = (210, 150) -->
-  <g transform="translate(0, 0)">
+  <!-- Left: Geometry Visual Area (Origin at (70, 390)) -->
+  <!-- A = (70, 390), B = (290, 390), C = (195, 160) -->
+  <g id="geometry">
     <!-- Shaded Triangle Area -->
-    <polygon points="80,390 310,390 210,150" fill="#313244" fill-opacity="0.35" stroke="#45475a" stroke-dasharray="4,4" stroke-width="1.2" />
+    <polygon points="70,390 290,390 195,160" fill="#313244" fill-opacity="0.35" stroke="#45475a" stroke-dasharray="4,4" stroke-width="1.2" />
 
-    <!-- Dashed Extension of vector a past vertex B -->
-    <line x1="310" y1="390" x2="420" y2="390" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="5,4" />
+    <!-- Dashed Extension of vector a past vertex B (bounded to x=390 <= 440) -->
+    <line x1="290" y1="390" x2="390" y2="390" stroke="#6c7086" stroke-width="1.5" stroke-dasharray="5,4" />
 
     <!-- Angle theta (interior at B) -->
-    <path d="M 265 390 A 45 45 0 0 1 292.7 348.5" fill="#f38ba8" fill-opacity="0.18" stroke="#f38ba8" stroke-width="1.8" />
-    <text class="angle-label" x="272" y="374" fill="#f38ba8">θ</text>
+    <path d="M 250 390 A 40 40 0 0 1 274.6 353.1" fill="#f38ba8" fill-opacity="0.18" stroke="#f38ba8" stroke-width="1.8" />
+    <text x="256" y="375" fill="#f38ba8" font-size="14px" font-style="italic">θ</text>
 
     <!-- Angle (180 - theta) (exterior between +a extension and b) -->
-    <path d="M 360 390 A 50 50 0 0 0 290.8 343.8" fill="#fab387" fill-opacity="0.15" stroke="#fab387" stroke-width="1.8" />
-    <text class="angle-label" x="328" y="360" fill="#fab387">180° − θ</text>
+    <path d="M 335 390 A 45 45 0 0 0 272.7 348.9" fill="#fab387" fill-opacity="0.15" stroke="#fab387" stroke-width="1.8" />
+    <text x="310" y="362" fill="#fab387" font-size="14px" font-style="italic">180° − θ</text>
 
-    <!-- Vector a: from (80, 390) to (310, 390) -->
-    <line x1="80" y1="390" x2="304" y2="390" stroke="#89b4fa" stroke-width="3.5" marker-end="url(#arrow-blue)" />
-    <!-- Vector b: from (310, 390) to (210, 150) -->
-    <line x1="310" y1="390" x2="213" y2="157" stroke="#a6e3a1" stroke-width="3.5" marker-end="url(#arrow-green)" />
-    <!-- Vector c = a + b: from (80, 390) to (210, 150) -->
-    <line x1="80" y1="390" x2="206" y2="157" stroke="#fab387" stroke-width="3.5" marker-end="url(#arrow-orange)" />
+    <!-- Vector a: from (70, 390) to (290, 390) -->
+    <line x1="70" y1="390" x2="284" y2="390" stroke="#89b4fa" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+    <!-- Vector b: from (290, 390) to (195, 160) -->
+    <line x1="290" y1="390" x2="198" y2="167" stroke="#a6e3a1" stroke-width="3.5" marker-end="url(#arrow-green)" />
+    <!-- Vector c = a + b: from (70, 390) to (195, 160) -->
+    <line x1="70" y1="390" x2="191" y2="167" stroke="#fab387" stroke-width="3.5" marker-end="url(#arrow-orange)" />
 
     <!-- Vector Labels -->
-    <text class="math-label" x="190" y="418" fill="#89b4fa">a</text>
-    <text class="math-label" x="272" y="260" fill="#a6e3a1">b</text>
-    <text class="math-label" x="125" y="260" fill="#fab387">c = a + b</text>
+    <text x="175" y="416" fill="#89b4fa" font-size="16px" font-weight="bold">a</text>
+    <text x="255" y="265" fill="#a6e3a1" font-size="16px" font-weight="bold">b</text>
+    <text x="110" y="265" fill="#fab387" font-size="16px" font-weight="bold">c = a + b</text>
 
-    <!-- Vertex Points and Labels -->
-    <circle cx="80" cy="390" r="4.5" fill="#cdd6f4" />
-    <circle cx="310" cy="390" r="4.5" fill="#cdd6f4" />
-    <circle cx="210" cy="150" r="4.5" fill="#cdd6f4" />
+    <!-- Vertex Points -->
+    <circle cx="70" cy="390" r="4.5" fill="#cdd6f4" />
+    <circle cx="290" cy="390" r="4.5" fill="#cdd6f4" />
+    <circle cx="195" cy="160" r="4.5" fill="#cdd6f4" />
   </g>
 
-  <!-- Right: Card Panel (x = 450 to 690, w = 240) -->
-  <g transform="translate(450, 95)">
+  <!-- Right: Side Card Panel (x = 475 to 700, w = 225) -->
+  <g transform="translate(475, 75)">
     <!-- Card Background -->
-    <rect width="240" height="385" rx="12" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5" />
+    <rect width="225" height="420" rx="8" fill="#181825" stroke="#6c7086" stroke-width="1.5" />
 
     <!-- Card Header -->
-    <rect width="240" height="40" rx="12" fill="#252538" />
-    <rect width="240" height="15" y="25" fill="#252538" />
-    <line x1="0" y1="40" x2="240" y2="40" stroke="#45475a" stroke-width="1" />
-    <text class="card-title" x="16" y="25">Derivation Summary</text>
+    <text x="16" y="30" fill="#89b4fa" font-size="15px" font-weight="700">Derivation Summary</text>
+    <line x1="16" y1="42" x2="209" y2="42" stroke="#45475a" stroke-width="1" />
 
     <!-- Card Content -->
     <g transform="translate(16, 62)">
       <!-- Step 1 -->
-      <text class="sub-label" x="0" y="0">1. Vector Setup</text>
-      <text class="math-text" x="8" y="22">c = a + b</text>
-      <text class="sub-label" x="8" y="42" fill="#9399b2">Head of a at tail of b</text>
+      <text x="0" y="0" fill="#bac2de" font-size="13px" font-weight="600">1. Vector Setup</text>
+      <text x="8" y="20" fill="#cdd6f4" font-size="13.5px">c = a + b</text>
+      <text x="8" y="38" fill="#9399b2" font-size="12px">Head of a at tail of b</text>
 
       <!-- Step 2 -->
-      <text class="sub-label" x="0" y="74">2. Vector Identity</text>
-      <text class="math-text" x="8" y="96">c² = (a + b) · (a + b)</text>
-      <text class="math-text" x="8" y="120">c² = a² + b² + 2(a · b)</text>
+      <text x="0" y="70" fill="#bac2de" font-size="13px" font-weight="600">2. Vector Identity</text>
+      <text x="8" y="90" fill="#cdd6f4" font-size="13px">c² = (a + b) · (a + b)</text>
+      <text x="8" y="112" fill="#cdd6f4" font-size="13px">c² = a² + b² + 2(a · b)</text>
 
       <!-- Step 3 -->
-      <text class="sub-label" x="0" y="152">3. Angle Between Vectors</text>
-      <text class="sub-label" x="8" y="172" fill="#9399b2">Interior angle of Δ: θ</text>
-      <text class="sub-label" x="8" y="190" fill="#9399b2">Angle between a &amp; b: 180° − θ</text>
-
-      <text class="math-text" x="8" y="216">a · b = ab cos(180° − θ)</text>
-      <text class="math-text" x="8" y="240">a · b = −ab cos θ</text>
+      <text x="0" y="144" fill="#bac2de" font-size="13px" font-weight="600">3. Angle Between Vectors</text>
+      <text x="8" y="164" fill="#9399b2" font-size="12px">Interior angle of Δ: θ</text>
+      <text x="8" y="180" fill="#9399b2" font-size="12px">Angle between a &amp; b: 180° − θ</text>
+      <text x="8" y="204" fill="#cdd6f4" font-size="13px">a · b = ab cos(180° − θ)</text>
+      <text x="8" y="226" fill="#cdd6f4" font-size="13px">a · b = −ab cos θ</text>
 
       <!-- Divider -->
-      <line x1="0" y1="258" x2="208" y2="258" stroke="#313244" stroke-width="1.2" />
+      <line x1="0" y1="242" x2="193" y2="242" stroke="#313244" stroke-width="1.2" />
 
       <!-- Conclusion -->
-      <text class="sub-label" x="0" y="278" fill="#fab387">4. Law of Cosines</text>
-      <rect x="0" y="286" width="208" height="32" rx="6" fill="#313244" stroke="#fab387" stroke-width="1" />
-      <text class="math-text" x="12" y="308" fill="#fab387" font-weight="bold">c² = a² + b² − 2ab cos θ</text>
+      <text x="0" y="262" fill="#fab387" font-size="13px" font-weight="600">4. Law of Cosines</text>
+      <rect x="0" y="272" width="193" height="34" rx="6" fill="#313244" stroke="#fab387" stroke-width="1" />
+      <text x="8" y="294" fill="#fab387" font-size="13px" font-weight="bold">c² = a² + b² − 2ab cos θ</text>
     </g>
   </g>
 </svg>

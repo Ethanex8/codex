@@ -23,8 +23,9 @@
 
   <!-- LEFT SIDE: Geometry Setup (Origin at (100, 380)) -->
   <!-- Coordinate Axes -->
-  <line x1="80" y1="380" x2="420" y2="380" stroke="#45475a" stroke-width="2" marker-end="url(#arrow-muted)" />
-  <text x="425" y="384" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500">x (along û)</text>
+  <line x1="80" y1="380" x2="405" y2="380" stroke="#45475a" stroke-width="2" marker-end="url(#arrow-muted)" />
+  <text x="414" y="384" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">x</text>
+  <text x="414" y="398" fill="#6c7086" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">(along û)</text>
 
   <line x1="100" y1="400" x2="100" y2="100" stroke="#45475a" stroke-width="2" marker-end="url(#arrow-muted)" />
   <text x="95" y="90" fill="#9399b2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" text-anchor="middle">y</text>
@@ -68,7 +69,7 @@
   </g>
 
   <!-- RIGHT SIDE: Compact Geometric Legend Card ($x \ge 475$) -->
-  <rect x="475" y="70" width="225" height="235" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  <rect x="475" y="70" width="225" height="240" rx="8" fill="#181825" stroke="#6c7086" stroke-width="1.5" />
 
   <!-- Card Title -->
   <text x="492" y="100" fill="#cdd6f4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Orthogonal Components</text>
