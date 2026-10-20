@@ -22,7 +22,16 @@ import math
 import os
 import re
 import sys
+from pathlib import Path
 from xml.etree import ElementTree as ET
+
+try:
+    import pymupdf
+except ImportError:
+    try:
+        import fitz as pymupdf
+    except ImportError:
+        pymupdf = None
 
 MOCHA_PALETTE = {
     '#1e1e2e': 'Base',
@@ -53,8 +62,8 @@ MOCHA_PALETTE = {
 }
 
 
-def audit_svg(file_path: str) -> list[str]:
-    """Audits a single SVG diagram file and returns a list of violation messages."""
+def audit_svg(file_path: str) -> tuple[list[str], list[tuple[str, float, float, float, float]]]:
+    """Audits a single SVG diagram file and returns (violation_messages, clearance_report)."""
     issues = []
     
     with open(file_path, 'r', encoding='utf-8') as fp:
@@ -65,7 +74,7 @@ def audit_svg(file_path: str) -> list[str]:
         tree = ET.parse(file_path)
         root = tree.getroot()
     except Exception as e:
-        return [f"Malformed XML: {e}"]
+        return [f"Malformed XML: {e}"], []
 
     # 2. Canvas & ViewBox
     vb = root.attrib.get('viewBox', '').strip()
@@ -224,16 +233,48 @@ def audit_svg(file_path: str) -> list[str]:
         return lines_out, texts_out
 
     plot_lines, plot_texts = collect_plot_elements(root)
-    for (label, tx, ty, cx, cy) in plot_texts:
+    clearance_report = []
+    for idx_t, (label, tx, ty, cx, cy) in enumerate(plot_texts):
+        min_line_d = float('inf')
         for (x1, y1, x2, y2) in plot_lines:
             d = dist_point_to_segment(cx, cy, x1, y1, x2, y2)
+            min_line_d = min(min_line_d, d)
             if d < 3.2:
                 issues.append(f"Text '{label}' at ({tx:.0f},{ty:.0f}) collides with line ({x1:.0f},{y1:.0f})->({x2:.0f},{y2:.0f}) (dist={d:.1f}px < 3.2px)")
 
-    return issues
+        min_text_d = float('inf')
+        for idx_o, (olabel, otx, oty, ocx, ocy) in enumerate(plot_texts):
+            if idx_t != idx_o:
+                td = math.hypot(cx - ocx, cy - ocy)
+                min_text_d = min(min_text_d, td)
+                if td < 5.0:
+                    issues.append(f"Text '{label}' at ({tx:.0f},{ty:.0f}) overlaps text '{olabel}' at ({otx:.0f},{oty:.0f}) (dist={td:.1f}px)")
+
+        clearance_report.append((label, tx, ty, min_line_d, min_text_d))
+
+    return issues, clearance_report
+
+
+def render_svg_preview(svg_path: str) -> str | None:
+    """Render SVG to a PNG raster preview in _local_data/snippets/ for visual inspection."""
+    if pymupdf is None:
+        return None
+    try:
+        out_dir = Path("_local_data/snippets")
+        out_dir.mkdir(parents=True, exist_ok=True)
+        stem = Path(svg_path).stem
+        out_png = out_dir / f"{stem}.png"
+        doc = pymupdf.open(svg_path)
+        pix = doc[0].get_pixmap(dpi=150)
+        pix.save(str(out_png))
+        return str(out_png)
+    except Exception:
+        return None
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description="Audit Codex SVG diagrams against AGENTS.md standards.")
     parser.add_argument("--file", help="Specific SVG file to audit")
     parser.add_argument("--chapter", type=int, help="Chapter number to audit (e.g. 1 for ch01)")
@@ -258,7 +299,7 @@ def main():
     total_issues = 0
     for f in files:
         name = os.path.basename(f)
-        issues = audit_svg(f)
+        issues, clearance_report = audit_svg(f)
         if not issues:
             print(f"{name:<16} | PASS     | All standards satisfied")
         else:
@@ -266,6 +307,17 @@ def main():
             print(f"{name:<16} | FAIL     | {len(issues)} issue(s)")
             for iss in issues:
                 print(f"   -> {iss}")
+
+        if args.file:
+            png_path = render_svg_preview(f)
+            if png_path:
+                print(f"[+] Raster preview saved to: {png_path}")
+            if clearance_report:
+                print("Plot Label Clearance Summary (nearest line / nearest label):")
+                for lbl, ltx, lty, ld, td in clearance_report:
+                    ld_str = f"{ld:.1f}px" if ld < float('inf') else "n/a"
+                    td_str = f"{td:.1f}px" if td < float('inf') else "n/a"
+                    print(f"  - '{lbl}' at ({ltx:.0f},{lty:.0f}): line_dist={ld_str}, text_dist={td_str}")
 
     print("-" * 80)
     if total_issues == 0:

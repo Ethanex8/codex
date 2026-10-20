@@ -2,7 +2,7 @@
 
 ## 1. Problem Lifecycle & Collaborative Protocol
 - **Next Problem Auto-Tracking**: Infer the next problem in sequence directly from context (e.g., Problem 1.2 follows 1.1). Only list files if jumping chapters or the sequence is ambiguous.
-- **Problem Extraction**: Strictly use the project utility `python scripts/extract_problem.py --chapter X --problem Y` to fetch the problem statement and inspect the rendered snippet image in `_local_data/snippets/prob_XX_YY.png` with `view_file`. Never attempt inline ad-hoc Python PDF parsing scripts or one-liners.
+- **Problem Extraction**: Strictly use the project utility `python scripts/extract_problem.py --chapter X --problem Y` (which also auto-extracts referenced chapter equations, or accepts `--eq X.Y`) and inspect the rendered snippet image in `_local_data/snippets/prob_XX_YY.png` with `read_file`. Never attempt inline ad-hoc Python PDF parsing scripts or one-liners.
 - **Zero Sibling Reading**: Never read existing or neighboring solution files (`prob_XX_YY-1.md`), diagrams (`fig_XX_YY.svg`), or past commit diffs to look up templates, styling, or formatting. All templates, design tokens, and path conventions are self-contained below.
 - **User-Led Strategy First**: Present the clean problem prompt and given parameters. Then wait for the user to provide their physical intuition, coordinate choice, and strategy.
 - **Guiding Principle**: Do not lecture or solve ahead of the user. Only interject or nudge if the user's stated approach contains an error, misconception, or sign trap.
@@ -22,7 +22,7 @@
 - **Deterministic Path Derivation**: Maintain the active book and chapter directory in session context. Never search or run directory listings to rediscover the active path.
 - **Navigation Invariant**: In `mkdocs.yml`, locate and append the problem under the active chapter:
   `- Problem X.Y: <rel_path_to_prob_XX_YY.md>`
-  Do not view large sections of `mkdocs.yml`—only read or edit the immediate chapter nav block.
+  Use `edit_file` directly on the preceding `- Problem X.(Y-1): ...` entry (or `read_file` with `StartLine`/`EndLine` if jumping chapters)—never spawn a terminal command or script to search `mkdocs.yml`.
 - **Self-Contained Frontmatter Schema**:
   ```markdown
   # Problem X.Y
@@ -64,5 +64,5 @@
   - **Collinear Vector Separation**: When vectors are physically collinear or antiparallel (e.g., centripetal $\mathbf{a}(t)$ and position $\mathbf{r}(t)$), apply a small lateral offset (3–4px) to draw them side-by-side with distinct arrowheads rather than painting directly over each other.
   - **Subscript & Font Rendering Invariant**: Never use nested `<tspan dy="...">` baseline shifts inside `<text>` elements with `text-anchor="end"` or `text-anchor="middle"` (causes glyph collapse across major SVG renderers). Use standard Unicode subscripts (e.g., $s_x \to \text{sₓ}$, $s_y \to \text{sᵧ}$) or separate, explicitly positioned `<text>` elements.
   - **Stacked Layout for Complex Setups**: When vector configurations require wide horizontal spans or lengthy component derivations, use a vertical split: vector geometry in the upper zone ($y \in [40, 290]$) and a full-width derivation card across the bottom ($y \in [320, 500]$).
-- **Automated Diagram Verification**: Whenever creating or modifying diagrams, verify compliance locally using `python scripts/audit_diagrams.py` (or `python scripts/audit_diagrams.py --chapter X`) and inspect rendered raster previews to guarantee zero text/line collisions.
+- **Automated Diagram Verification**: Whenever creating or modifying diagrams, verify compliance locally using `python scripts/audit_diagrams.py --file <path>` (or `--chapter X`) and inspect the generated raster preview in `_local_data/snippets/fig_XX_YY.png` with `read_file` to guarantee zero text/line collisions before presenting to the user.
 - **In-Chat Preview**: Render diagram previews in chat responses using an HTML artifact in the conversation artifact directory wrapping the SVG markup inside an `<agent-embed src="file:///<path>/fig_XX_YY_preview.html"></agent-embed>` block. Never re-read external skill docs or templates to construct this.

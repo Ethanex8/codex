@@ -69,13 +69,46 @@ def find_problem_in_pdf(
                 extracted_text = text[start_pos : next_match.start()].strip()
             else:
                 extracted_text = text[start_pos:].strip()
+                # Check if problem continues onto the next page before next_prob_pattern
+                if page_idx + 1 < len(doc):
+                    next_page_text = doc[page_idx + 1].get_text()
+                    next_page_match = next_prob_pattern.search(next_page_text)
+                    if next_page_match and next_page_match.start() > 0:
+                        extracted_text += "\n" + next_page_text[: next_page_match.start()].strip()
             break
 
     return found_page, found_rect, extracted_text
 
 
+def find_equations_in_chapter(
+    doc: pymupdf.Document, eq_refs: list[str], max_page_idx: int
+) -> dict[str, str]:
+    """Locate referenced equations like '1.6' in chapter pages up to max_page_idx."""
+    found_eqs: dict[str, str] = {}
+    for eq in eq_refs:
+        eq_token = f"({eq})"
+        for p_idx in range(max_page_idx + 1):
+            p_text = doc[p_idx].get_text()
+            if eq_token in p_text:
+                lines = [ln.strip() for ln in p_text.splitlines() if ln.strip()]
+                for i, ln in enumerate(lines):
+                    if eq_token in ln:
+                        start_i = max(0, i - 3)
+                        end_i = min(len(lines), i + 3)
+                        snippet = " | ".join(lines[start_i:end_i])
+                        found_eqs[eq] = f"[PDF p.{p_idx + 1}] {snippet}"
+                        break
+                if eq in found_eqs:
+                    break
+    return found_eqs
+
+
 def extract_and_save(
-    pdf_path: Path, chapter: int, problem: int, save_image: bool = True
+    pdf_path: Path,
+    chapter: int,
+    problem: int,
+    save_image: bool = True,
+    extra_eqs: list[str] | None = None,
 ) -> dict:
     if not pdf_path.exists():
         raise FileNotFoundError(f"Textbook PDF not found at {pdf_path}")
@@ -86,6 +119,11 @@ def extract_and_save(
     if page_idx == -1:
         return {"found": False, "message": f"Problem {chapter}.{problem} not found"}
 
+    # Auto-detect equation references like (1.6) or (1.7) in problem text
+    auto_eqs = re.findall(rf"\(({chapter}\.\d+)\)", text)
+    eq_targets = list(dict.fromkeys(auto_eqs + (extra_eqs or [])))
+    equations = find_equations_in_chapter(doc, eq_targets, page_idx) if eq_targets else {}
+
     result = {
         "found": True,
         "chapter": chapter,
@@ -93,6 +131,7 @@ def extract_and_save(
         "page_index": page_idx,
         "pdf_page_number": page_idx + 1,
         "text": text,
+        "equations": equations,
         "image_path": None,
     }
 
@@ -116,6 +155,8 @@ def extract_and_save(
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description="Extract textbook problems from local PDF")
     parser.add_argument("--chapter", "-c", type=int, required=True, help="Chapter number")
     parser.add_argument("--problem", "-p", type=int, required=True, help="Problem number")
@@ -130,10 +171,22 @@ def main():
         action="store_true",
         help="Do not render problem snippet image",
     )
+    parser.add_argument(
+        "--eq",
+        action="append",
+        default=[],
+        help="Additional equation number(s) to look up (e.g. --eq 1.6)",
+    )
 
     args = parser.parse_args()
 
-    res = extract_and_save(args.pdf, args.chapter, args.problem, save_image=not args.no_image)
+    res = extract_and_save(
+        args.pdf,
+        args.chapter,
+        args.problem,
+        save_image=not args.no_image,
+        extra_eqs=args.eq,
+    )
     if not res["found"]:
         print(f"[-] {res['message']}")
         sys.exit(1)
@@ -143,6 +196,11 @@ def main():
         print(f"[+] Snippet image saved to: {res['image_path']}")
     print("-" * 60)
     print(res["text"])
+    if res.get("equations"):
+        print("-" * 60)
+        print("Referenced Equations:")
+        for eq_num, eq_ctx in res["equations"].items():
+            print(f"  ({eq_num}): {eq_ctx}")
     print("-" * 60)
 
 
