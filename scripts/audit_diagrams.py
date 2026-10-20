@@ -18,6 +18,7 @@ Usage:
 
 import argparse
 import glob
+import math
 import os
 import re
 import sys
@@ -164,6 +165,70 @@ def audit_svg(file_path: str) -> list[str]:
         elif ctype == 'stacked':
             if cy < 300 or card_bottom > 505:
                 issues.append(f"Stacked card y=[{cy:.1f}, {card_bottom:.1f}] outside vertical split [320, 500]")
+
+    # 6. Plot-Area Text-to-Line Collision Check
+    def dist_point_to_segment(px: float, py: float, x1: float, y1: float, x2: float, y2: float) -> float:
+        dx, dy = x2 - x1, y2 - y1
+        if dx == 0 and dy == 0:
+            return math.hypot(px - x1, py - y1)
+        t = max(0.0, min(1.0, ((px - x1) * dx + (py - y1) * dy) / (dx * dx + dy * dy)))
+        return math.hypot(px - (x1 + t * dx), py - (y1 + t * dy))
+
+    has_stacked = any(c[0] == 'stacked' for c in found_cards)
+    max_plot_y = 305.0 if has_stacked else 510.0
+
+    # Collect top-level or untranslated plot lines and texts
+    def collect_plot_elements(node, gx=0.0, gy=0.0):
+        lines_out, texts_out = [], []
+        for child in node:
+            tag = child.tag.split('}')[-1]
+            if tag == 'g':
+                if child.attrib.get('id', '') in ['side-card', 'info-card', 'derivation-card']:
+                    continue
+                trans = child.attrib.get('transform', '')
+                m = re.match(r'translate\(\s*([\d\.\-]+)\s*,\s*([\d\.\-]+)\s*\)', trans)
+                cgx = gx + float(m.group(1)) if m else gx
+                cgy = gy + float(m.group(2)) if m else gy
+                if cgx >= 450 or cgy >= 300:
+                    continue
+                sub_l, sub_t = collect_plot_elements(child, cgx, cgy)
+                lines_out.extend(sub_l)
+                texts_out.extend(sub_t)
+            elif tag == 'line':
+                try:
+                    x1 = float(child.attrib.get('x1', 0)) + gx
+                    y1 = float(child.attrib.get('y1', 0)) + gy
+                    x2 = float(child.attrib.get('x2', 0)) + gx
+                    y2 = float(child.attrib.get('y2', 0)) + gy
+                    if max(x1, x2) < 465 and max(y1, y2) > 75 and min(y1, y2) < max_plot_y:
+                        if math.hypot(x2 - x1, y2 - y1) > 25.0:  # Ignore tiny tick marks
+                            lines_out.append((x1, y1, x2, y2))
+                except ValueError:
+                    pass
+            elif tag == 'text':
+                try:
+                    if 'x' not in child.attrib or 'y' not in child.attrib:
+                        continue
+                    tx = float(child.attrib['x']) + gx
+                    ty = float(child.attrib['y']) + gy
+                    if tx < 465 and 75 < ty < max_plot_y:
+                        label = ''.join(child.itertext()).strip()
+                        if label:
+                            anchor = child.attrib.get('text-anchor', 'start')
+                            w_est = len(label) * 6.5
+                            cx = tx + (w_est / 2.0 if anchor == 'start' else (-w_est / 2.0 if anchor == 'end' else 0.0))
+                            cy = ty - 3.5
+                            texts_out.append((label, tx, ty, cx, cy))
+                except ValueError:
+                    pass
+        return lines_out, texts_out
+
+    plot_lines, plot_texts = collect_plot_elements(root)
+    for (label, tx, ty, cx, cy) in plot_texts:
+        for (x1, y1, x2, y2) in plot_lines:
+            d = dist_point_to_segment(cx, cy, x1, y1, x2, y2)
+            if d < 3.2:
+                issues.append(f"Text '{label}' at ({tx:.0f},{ty:.0f}) collides with line ({x1:.0f},{y1:.0f})->({x2:.0f},{y2:.0f}) (dist={d:.1f}px < 3.2px)")
 
     return issues
 
