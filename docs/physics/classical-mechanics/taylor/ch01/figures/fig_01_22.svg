@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520">
+  <!-- Solid background -->
+  <rect width="720" height="520" fill="#1e1e2e" />
+
+  <defs>
+    <!-- Arrowhead markers for vectors and axes -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#89b4fa" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fab387" />
+    </marker>
+    <marker id="arrow-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#9399b2" />
+    </marker>
+
+    <!-- Arrowhead markers for angle arcs -->
+    <marker id="arrow-orange-arc" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 2 L 7 5 L 0 8 z" fill="#fab387" />
+    </marker>
+    <marker id="arrow-green-arc" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 2 L 7 5 L 0 8 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrow-blue-arc" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 2 L 7 5 L 0 8 z" fill="#89b4fa" />
+    </marker>
+  </defs>
+
+  <!-- Title block -->
+  <text x="40" y="42" fill="#cdd6f4" font-size="20" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">Trigonometric Addition Formulas</text>
+  <text x="40" y="66" fill="#9399b2" font-size="13" font-family="system-ui, -apple-system, sans-serif">Problem 1.22 — Dot and Cross Products in the xy-Plane</text>
+
+  <!-- Coordinate Axes -->
+  <!-- Origin O = (100, 420) -->
+  <line x1="70" y1="420" x2="425" y2="420" stroke="#9399b2" stroke-width="1.5" marker-end="url(#arrow-axis)" />
+  <line x1="100" y1="440" x2="100" y2="105" stroke="#9399b2" stroke-width="1.5" marker-end="url(#arrow-axis)" />
+  <text x="435" y="424" fill="#9399b2" font-size="14" font-family="system-ui, -apple-system, sans-serif" text-anchor="start">x</text>
+  <text x="100" y="92" fill="#9399b2" font-size="14" font-family="system-ui, -apple-system, sans-serif" text-anchor="middle">y</text>
+  <text x="88" y="436" fill="#9399b2" font-size="13" font-family="system-ui, -apple-system, sans-serif" text-anchor="end">O</text>
+
+  <!-- Angle Arcs -->
+  <!-- Arc 1: Angle beta (0 to 22 deg, R = 65) -->
+  <path d="M 165 420 A 65 65 0 0 0 160.3 395.6" fill="none" stroke="#fab387" stroke-width="1.5" marker-end="url(#arrow-orange-arc)" />
+  <text x="185" y="408" fill="#fab387" font-size="15" font-style="italic" font-weight="bold" font-family="system-ui, -apple-system, sans-serif" text-anchor="start">β</text>
+
+  <!-- Arc 2: Relative angle (alpha - beta) (22 deg to 64 deg, R = 110) -->
+  <path d="M 202.0 378.8 A 110 110 0 0 0 148.2 321.1" fill="none" stroke="#a6e3a1" stroke-width="1.8" marker-end="url(#arrow-green-arc)" />
+  <text x="205" y="332" fill="#a6e3a1" font-size="14" font-weight="bold" font-family="system-ui, -apple-system, sans-serif" text-anchor="start">α − β</text>
+
+  <!-- Arc 3: Angle alpha (0 to 64 deg, R = 170) -->
+  <path d="M 270 420 A 170 170 0 0 0 174.5 267.2" fill="none" stroke="#89b4fa" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow-blue-arc)" />
+  <!-- Alpha label positioned clearly in open sector with generous buffer from all lines -->
+  <text x="225" y="275" fill="#89b4fa" font-size="16" font-style="italic" font-weight="bold" font-family="system-ui, -apple-system, sans-serif" text-anchor="middle">α</text>
+
+  <!-- Vectors -->
+  <!-- Vector b: orange, 22 deg, L = 260 -->
+  <line x1="100" y1="420" x2="337.5" y2="324.0" stroke="#fab387" stroke-width="2.5" marker-end="url(#arrow-orange)" />
+  <text x="352" y="318" fill="#fab387" font-size="16" font-weight="bold" font-family="system-ui, -apple-system, sans-serif" text-anchor="start">b</text>
+
+  <!-- Vector a: blue, 64 deg, L = 280 -->
+  <line x1="100" y1="420" x2="220.8" y2="168.0" stroke="#89b4fa" stroke-width="2.5" marker-end="url(#arrow-blue)" />
+  <text x="220" y="145" fill="#89b4fa" font-size="16" font-weight="bold" font-family="system-ui, -apple-system, sans-serif" text-anchor="middle">a</text>
+
+  <!-- Info / Derivation Card on Right (x >= 475) -->
+  <g id="side-card">
+    <rect x="475" y="70" width="225" height="420" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+    <path d="M 475 78 Q 475 70 483 70 L 692 70 Q 700 70 700 78 L 700 106 L 475 106 Z" fill="#313244" />
+    <text x="490" y="94" fill="#cdd6f4" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">Vector Relations</text>
+
+    <!-- Components summary -->
+    <text x="490" y="130" fill="#89b4fa" font-size="12" font-family="system-ui, -apple-system, sans-serif">a = a (cos α x̂ + sin α ŷ)</text>
+    <text x="490" y="152" fill="#fab387" font-size="12" font-family="system-ui, -apple-system, sans-serif">b = b (cos β x̂ + sin β ŷ)</text>
+    <text x="490" y="174" fill="#a6e3a1" font-size="12" font-family="system-ui, -apple-system, sans-serif">Angle from b to a: α − β</text>
+
+    <!-- Divider -->
+    <line x1="485" y1="190" x2="690" y2="190" stroke="#313244" stroke-width="1" />
+
+    <!-- Part (a) Scalar Product -->
+    <text x="490" y="212" fill="#cdd6f4" font-size="12" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">(a) Scalar Product a · b</text>
+    <text x="490" y="232" fill="#9399b2" font-size="11" font-family="system-ui, -apple-system, sans-serif">Geometric: ab cos(α − β)</text>
+    <text x="490" y="250" fill="#9399b2" font-size="11" font-family="system-ui, -apple-system, sans-serif">Components: aₓbₓ + aᵧbᵧ</text>
+
+    <rect x="482" y="262" width="210" height="30" rx="5" fill="#1e1e2e" stroke="#a6e3a1" stroke-width="1" />
+    <text x="587" y="282" fill="#a6e3a1" font-size="10.5" font-weight="bold" font-family="system-ui, -apple-system, sans-serif" text-anchor="middle">cos(α−β) = cos α cos β + sin α sin β</text>
+
+    <!-- Divider -->
+    <line x1="485" y1="308" x2="690" y2="308" stroke="#313244" stroke-width="1" />
+
+    <!-- Part (b) Vector Product -->
+    <text x="490" y="330" fill="#cdd6f4" font-size="12" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">(b) Vector Product a × b</text>
+    <text x="490" y="350" fill="#9399b2" font-size="11" font-family="system-ui, -apple-system, sans-serif">Geometric: −ab sin(α − β) ẑ</text>
+    <text x="490" y="368" fill="#9399b2" font-size="11" font-family="system-ui, -apple-system, sans-serif">Components: (aₓbᵧ − aᵧbₓ) ẑ</text>
+
+    <rect x="482" y="380" width="210" height="30" rx="5" fill="#1e1e2e" stroke="#89b4fa" stroke-width="1" />
+    <text x="587" y="400" fill="#89b4fa" font-size="10.5" font-weight="bold" font-family="system-ui, -apple-system, sans-serif" text-anchor="middle">sin(α−β) = sin α cos β − cos α sin β</text>
+
+    <!-- Note on RHS cancellation -->
+    <text x="490" y="432" fill="#9399b2" font-size="10" font-family="system-ui, -apple-system, sans-serif">Dividing by magnitudes ab (≠ 0)</text>
+    <text x="490" y="448" fill="#9399b2" font-size="10" font-family="system-ui, -apple-system, sans-serif">yields trigonometric identities.</text>
+  </g>
+</svg>
