@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520">
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="arrow-axis" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#9399b2" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#89b4fa" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#a6e3a1" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f38ba8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="520" fill="#1e1e2e" />
+
+  <!-- Global Header Title -->
+  <text x="360" y="27" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Problem 1.26 — Puck Trajectory in Inertial vs. Non-Inertial Reference Frames</text>
+
+  <!-- ========================================== -->
+  <!-- PANEL 1: Frame S (Inertial)                -->
+  <!-- ========================================== -->
+  <rect x="20" y="42" width="220" height="458" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  
+  <!-- Panel 1 Header -->
+  <rect x="20" y="42" width="220" height="38" rx="8" fill="#313244" />
+  <text x="130" y="60" fill="#89b4fa" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Frame S (Observer at Rest)</text>
+  <text x="130" y="74" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="10" text-anchor="middle">Inertial Reference Frame</text>
+
+  <!-- Coordinate Axes: Origin at (130, 275) -->
+  <line x1="50" y1="275" x2="210" y2="275" stroke="#6c7086" stroke-width="1.2" marker-end="url(#arrow-axis)" />
+  <line x1="130" y1="290" x2="130" y2="100" stroke="#6c7086" stroke-width="1.2" marker-end="url(#arrow-axis)" />
+  <text x="212" y="279" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="11" text-anchor="start">x</text>
+  <text x="130" y="93" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="11" text-anchor="middle">y (North)</text>
+  <text x="122" y="288" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="10" text-anchor="end">O</text>
+
+  <!-- Puck Trajectory in S: Straight line due north -->
+  <line x1="130" y1="275" x2="130" y2="115" stroke="#89b4fa" stroke-width="2.5" marker-end="url(#arrow-blue)" />
+  
+  <!-- Strobe points showing equal spacing (constant speed) -->
+  <circle cx="130" cy="275" r="3.5" fill="#89b4fa" />
+  <circle cx="130" cy="225" r="3" fill="#89b4fa" />
+  <circle cx="130" cy="175" r="3" fill="#89b4fa" />
+  <circle cx="130" cy="125" r="3" fill="#89b4fa" />
+
+  <!-- Annotation in Plot -->
+  <text x="142" y="150" fill="#89b4fa" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="start">v = v₀ ŷ</text>
+  <text x="142" y="165" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="9" text-anchor="start">Equal spacing</text>
+
+  <!-- Derivation & Properties Box -->
+  <rect x="30" y="305" width="200" height="182" rx="6" fill="#1e1e2e" stroke="#313244" stroke-width="1" />
+  
+  <text x="40" y="325" fill="#fab387" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700">Equations of Motion:</text>
+  <text x="40" y="345" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">ẍ = 0  →  x(t) = 0</text>
+  <text x="40" y="363" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">ÿ = 0  →  y(t) = v₀ t</text>
+  
+  <line x1="40" y1="375" x2="220" y2="375" stroke="#313244" stroke-width="1" />
+
+  <text x="40" y="393" fill="#fab387" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700">Trajectory Properties:</text>
+  <text x="40" y="411" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">Path: Straight line (North)</text>
+  <text x="40" y="428" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">Speed: Constant (|v| = v₀)</text>
+  <text x="40" y="445" fill="#a6e3a1" font-family="system-ui, -apple-system, sans-serif" font-size="10">Net Force = 0  ⇒  a = 0</text>
+
+  <!-- Inertial Badge -->
+  <rect x="50" y="457" width="160" height="22" rx="4" fill="#181825" stroke="#a6e3a1" stroke-width="1" />
+  <text x="130" y="472" fill="#a6e3a1" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">✓ INERTIAL FRAME</text>
+
+  <!-- ========================================== -->
+  <!-- PANEL 2: Frame S' (Uniform Velocity)       -->
+  <!-- ========================================== -->
+  <rect x="250" y="42" width="220" height="458" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  
+  <!-- Panel 2 Header -->
+  <rect x="250" y="42" width="220" height="38" rx="8" fill="#313244" />
+  <text x="360" y="60" fill="#a6e3a1" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Frame S' (Uniform Velocity)</text>
+  <text x="360" y="74" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="10" text-anchor="middle">v_frame = v x̂ (East)</text>
+
+  <!-- Coordinate Axes: Origin at (410, 275) to leave room in Quad 2 -->
+  <line x1="270" y1="275" x2="450" y2="275" stroke="#6c7086" stroke-width="1.2" marker-end="url(#arrow-axis)" />
+  <line x1="410" y1="290" x2="410" y2="100" stroke="#6c7086" stroke-width="1.2" marker-end="url(#arrow-axis)" />
+  <text x="452" y="279" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="11" text-anchor="start">x'</text>
+  <text x="410" y="93" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="11" text-anchor="middle">y' (North)</text>
+  <text x="416" y="288" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="10" text-anchor="start">O'</text>
+
+  <!-- Puck Trajectory in S': Slanted straight line into Quad 2 -->
+  <line x1="410" y1="275" x2="310" y2="115" stroke="#a6e3a1" stroke-width="2.5" marker-end="url(#arrow-green)" />
+
+  <!-- Strobe points showing equal spacing along diagonal -->
+  <circle cx="410" cy="275" r="3.5" fill="#a6e3a1" />
+  <circle cx="377" cy="222" r="3" fill="#a6e3a1" />
+  <circle cx="343" cy="168" r="3" fill="#a6e3a1" />
+  <circle cx="310" cy="115" r="3" fill="#a6e3a1" />
+
+  <!-- Annotation in Plot -->
+  <text x="265" y="195" fill="#a6e3a1" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="start">v' = -v x̂ + v₀ ŷ</text>
+  <text x="265" y="210" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="9" text-anchor="start">Straight line</text>
+
+  <!-- Derivation & Properties Box -->
+  <rect x="260" y="305" width="200" height="182" rx="6" fill="#1e1e2e" stroke="#313244" stroke-width="1" />
+  
+  <text x="270" y="325" fill="#fab387" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700">Equations of Motion:</text>
+  <text x="270" y="345" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">ẍ' = 0  →  x'(t) = -v t</text>
+  <text x="270" y="363" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">ÿ' = 0  →  y'(t) = v₀ t</text>
+  
+  <line x1="270" y1="375" x2="450" y2="375" stroke="#313244" stroke-width="1" />
+
+  <text x="270" y="393" fill="#fab387" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700">Trajectory Properties:</text>
+  <text x="270" y="411" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">Path: Straight line (y' = -v₀/v x')</text>
+  <text x="270" y="428" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">Speed: Constant (√(v² + v₀²))</text>
+  <text x="270" y="445" fill="#a6e3a1" font-family="system-ui, -apple-system, sans-serif" font-size="10">Net Force = 0  ⇒  a' = 0</text>
+
+  <!-- Inertial Badge -->
+  <rect x="280" y="457" width="160" height="22" rx="4" fill="#181825" stroke="#a6e3a1" stroke-width="1" />
+  <text x="360" y="472" fill="#a6e3a1" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">✓ INERTIAL FRAME</text>
+
+  <!-- ========================================== -->
+  <!-- PANEL 3: Frame S'' (Accelerating)          -->
+  <!-- ========================================== -->
+  <rect x="480" y="42" width="220" height="458" rx="8" fill="#181825" stroke="#313244" stroke-width="1.5" />
+  
+  <!-- Panel 3 Header -->
+  <rect x="480" y="42" width="220" height="38" rx="8" fill="#313244" />
+  <text x="590" y="60" fill="#f38ba8" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Frame S'' (Accelerating)</text>
+  <text x="590" y="74" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="10" text-anchor="middle">a_frame = a x̂ (East)</text>
+
+  <!-- Coordinate Axes: Origin at (645, 275) to leave room for leftward parabola -->
+  <line x1="500" y1="275" x2="685" y2="275" stroke="#6c7086" stroke-width="1.2" marker-end="url(#arrow-axis)" />
+  <line x1="645" y1="290" x2="645" y2="100" stroke="#6c7086" stroke-width="1.2" marker-end="url(#arrow-axis)" />
+  <text x="687" y="279" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="11" text-anchor="start">x''</text>
+  <text x="645" y="93" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="11" text-anchor="middle">y'' (North)</text>
+  <text x="651" y="288" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="10" text-anchor="start">O''</text>
+
+  <!-- Puck Trajectory in S'': Leftward curving parabola -->
+  <!-- Smooth cubic Bezier fitting parabola: (645,275) to (535,115) -->
+  <path d="M 645 275 C 645 220, 615 155, 535 115" fill="none" stroke="#f38ba8" stroke-width="2.5" marker-end="url(#arrow-red)" />
+
+  <!-- Strobe points: quadratic spacing in x, linear in y -->
+  <!-- t=0: (645, 275) | t=1: (633, 222) | t=2: (597, 168) | t=3: (537, 115) -->
+  <circle cx="645" cy="275" r="3.5" fill="#f38ba8" />
+  <circle cx="633" cy="222" r="3" fill="#f38ba8" />
+  <circle cx="597" cy="168" r="3" fill="#f38ba8" />
+  <circle cx="537" cy="115" r="3" fill="#f38ba8" />
+
+  <!-- Annotation in Plot -->
+  <text x="515" y="145" fill="#f38ba8" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="start">x'' ∝ -(y'')²</text>
+  <text x="515" y="160" fill="#9399b2" font-family="system-ui, -apple-system, sans-serif" font-size="9" text-anchor="start">Curved path</text>
+
+  <!-- Derivation & Properties Box -->
+  <rect x="490" y="305" width="200" height="182" rx="6" fill="#1e1e2e" stroke="#313244" stroke-width="1" />
+  
+  <text x="500" y="325" fill="#fab387" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700">Equations of Motion:</text>
+  <text x="500" y="345" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">ẍ'' = -a  →  x''(t) = -½ a t²</text>
+  <text x="500" y="363" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">ÿ'' = 0   →  y''(t) = v₀ t</text>
+  
+  <line x1="500" y1="375" x2="680" y2="375" stroke="#313244" stroke-width="1" />
+
+  <text x="500" y="393" fill="#fab387" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700">Trajectory Properties:</text>
+  <text x="500" y="411" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">Path: Parabola (opens West)</text>
+  <text x="500" y="428" fill="#cdd6f4" font-family="system-ui, -apple-system, sans-serif" font-size="10">Speed: Changes (√(a²t² + v₀²))</text>
+  <text x="500" y="445" fill="#f38ba8" font-family="system-ui, -apple-system, sans-serif" font-size="10">Net Force = 0 but a'' = -a x̂ ≠ 0</text>
+
+  <!-- Non-Inertial Badge -->
+  <rect x="500" y="457" width="180" height="22" rx="4" fill="#181825" stroke="#f38ba8" stroke-width="1" />
+  <text x="590" y="472" fill="#f38ba8" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" text-anchor="middle">✗ NON-INERTIAL FRAME</text>
+</svg>
